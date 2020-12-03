@@ -1,6 +1,6 @@
 # Java-MiniProject : Dear.Diary
 
-## Why we slect this Topic?
+## Why we select this Topic?
 
 ## DATA
 
