@@ -1,1 +1,13 @@
-# 다이어리 프로젝트
+# Java-MiniProject : Dear.Diary
+
+## Why we slect this Topic?
+
+## DATA
+
+## STRUCTURE 
+
+## SQL TABLE 
+
+## JAVA CODE 
+
+## INSPRATION 
