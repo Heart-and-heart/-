@@ -20,7 +20,7 @@ http://dongascience.donga.com/news.php?idx=41968
 
 ## STRUCTURE 
 <div>
-<img width="200" src=https://lh4.googleusercontent.com/dVuPisLaZvbbO7v7B0Yf3T4AXV2zYE-7L7lMroRW51R2pD9GyZVJn1DlOquyORKzETP0_A3eH8OQpMqBZKCMJF7LS0YUBBU4Uyrf3-e02mpv3uciUoatxd3H92q2aEB7xiKuKZtzZA>
+<img width="600" src=https://lh4.googleusercontent.com/dVuPisLaZvbbO7v7B0Yf3T4AXV2zYE-7L7lMroRW51R2pD9GyZVJn1DlOquyORKzETP0_A3eH8OQpMqBZKCMJF7LS0YUBBU4Uyrf3-e02mpv3uciUoatxd3H92q2aEB7xiKuKZtzZA>
 
 ## SQL TABLE 
 
