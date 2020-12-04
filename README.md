@@ -1,6 +1,6 @@
 # Java-MiniProject : Dear.Diary
 
-Dear.Diary는 <br>
+<b>Dear.Diary</b>는 <br>
 :pencil2: 매일 자신의 감정과 연관된 상태를 간단히 기록하고,  <br>
 :couple: 다른 사람의 기록을 살펴보는 과정을 통해  <br>
 :muscle: 나와 주변의 마음건강을 유지하도록 돕는  <br>
@@ -69,38 +69,36 @@ Dear.Diary는 <br>
 <div>	
 </br></p>
 
-### 1. USER 행동 시나리오
-			
-:key: 1) 내 아이디와 비밀번호를 입력하여 로그인 <br>
-:ballot_box_with_check: 2) 내 ID에 해당하는 전체 다이어리 정보를 확인한다 <br>
-:couplekiss: 3) 나와 커플인 이용자의 다이어리 정보를 확인한다 <br>
-:pencil: 4) 다이어리 쓰기  <br>
-:calendar: 5) 특정 날짜에 해당하는 다이어리 수정 <br>
-:x: 6) 특정 날짜에 해당하는 다이어리 삭제 <br>
-:speech_balloon: 7) 오늘 내 기분과 같은 기분인 사람들의 한줄 코멘트 보기 <br>
-:bar_chart: 8) 나의 감정상태 측정  - ① 자신이 지금까지 기록했던 기분점수 평균과  <br>
-				② 최근 7일간의 기분점수 평균 비교 <br>
-				id님,  <br>
-				# (+: 감정상태가 평균과 같거나 더 높을 경우)  <br>
-					이번주도 해피해피하게 아주 잘 보내고 있어요!  <br>
-		       		# (-: 감정상태가 평소보다 낮을 경우)  <br>
-				이번주는 평소보다 우울하신가요? 오늘 간식으로 달콤한 케이크 한 조각 어때요? <br> <p></p>
+### 1. USER 행동 시나리오		
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:key: 로그인 <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:ballot_box_with_check: 내 다이어리 보기 <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:couplekiss: 커플 이용자 다이어리 보기 <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:pencil: 다이어리 쓰기  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:calendar: 다이어리 수정 <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:x: 다이어리 삭제 <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:speech_balloon: 오늘 내 기분과 같은 기분인 사람들의 한줄 코멘트 보기 <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:bar_chart: 나의 감정상태 측정  - ① 자신이 지금까지 기록했던 기분점수 평균과  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;				② 최근 7일간의 기분점수 평균 비교 <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;				id님,  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;				:heavy_plus_sign: (감정상태가 평균과 같거나 더 높을 경우)  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;					이번주도 해피해피하게 아주 잘 보내고 있어요!  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;		       		:heavy_minus_sign: (감정상태가 평소보다 낮을 경우)  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;				이번주는 평소보다 우울하신가요? 오늘 간식으로 달콤한 케이크 한 조각 어때요? <br> <p></p>
 				
-:sleeping: 9) 나의 수면상태 측정  - ① 지금까지 기록했던 수면시간 평균과  <br>
-				② 최근 7일간의 수면시간 평균 비교  <br>
-					id님,  <br>
-					<br>
-				# (-) id님, 푹 쉬셨네요 ! 주말엔 등산처럼 활기찬 야외활동을 해보는 게 어떨까요 ~?! <br>
-				# (+) 이번주는 평소보다 덜 주무셨어요. 주말엔 꼭 포근한 이불 속에서 푹 쉬세요!  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:sleeping: 9) 나의 수면상태 측정  - ① 지금까지 기록했던 수면시간 평균과  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;				② 최근 7일간의 수면시간 평균 비교  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;					id님,  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;				:heavy_plus_sign: id님, 푹 쉬셨네요 ! 주말엔 등산처럼 활기찬 야외활동을 해보는 게 어떨까요 ~?! <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;				:heavy_minus_sign: 이번주는 평소보다 덜 주무셨어요. 주말엔 꼭 포근한 이불 속에서 푹 쉬세요!  <br>
 				 <br>
 				 
 ### 2. 관리자 행동 시나리오
 <div>	
 	</br</p>
 	
-:wrench: 1) 모든 다이어리 정보 CRUD  <br>
-:busts_in_silhouette: 2) 감정 테이블에 감정 추가/삭제 (향후 Update용) <br>
-:droplet: 3) 날씨 테이블에 날씨 추가/삭제 (향후 Update용) <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:wrench: 1) 모든 다이어리 정보 CRUD  <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:busts_in_silhouette: 2) 감정 테이블에 감정 추가/삭제 (향후 Update용) <br>
+&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:droplet: 3) 날씨 테이블에 날씨 추가/삭제 (향후 Update용) <br>
 
                                           
 ## SQL TABLE 
