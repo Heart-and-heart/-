@@ -53,11 +53,11 @@ Dear.Diary는 <br>
 
 ## STRUCTURE 
 
-###물리모델
+### 물리모델
 <div>
 <img width="1000" src=https://lh4.googleusercontent.com/dVuPisLaZvbbO7v7B0Yf3T4AXV2zYE-7L7lMroRW51R2pD9GyZVJn1DlOquyORKzETP0_A3eH8OQpMqBZKCMJF7LS0YUBBU4Uyrf3-e02mpv3uciUoatxd3H92q2aEB7xiKuKZtzZA>
 	
-###논리모델
+### 논리모델
 	
 
 ## MODELING 	
