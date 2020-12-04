@@ -5,7 +5,7 @@
 ## Why we select this Topic?
 
 <div>
-<img width="1000" src=https://user-images.githubusercontent.com/73386460/101110209-dcb81300-361b-11eb-8e5a-75cf0469f02a.jpg>
+<img width="700" src=https://user-images.githubusercontent.com/73386460/101110209-dcb81300-361b-11eb-8e5a-75cf0469f02a.jpg>
 
 http://dongascience.donga.com/news.php?idx=41968
 - 20,30 세대의 우울감이 더 심해지고 있음
