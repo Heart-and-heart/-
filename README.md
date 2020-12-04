@@ -67,7 +67,8 @@ Dear.Diary는 <br>
 
 ## Service 
 <div>	
-</br>
+</br></p>
+
 ### 1. USER 행동 시나리오
 			
 	1) 내 아이디와 비밀번호를 입력하여 로그인
@@ -94,12 +95,11 @@ Dear.Diary는 <br>
 
 ### 2. 관리자 행동 시나리오
 <div>	
-	</br>
-```	
+	</br</p>
+	
 	1) 모든 다이어리 정보 CRUD <br>
 	2) 감정 테이블에 감정 추가/삭제 (향후 Update용) <br>
 	3) 날씨 테이블에 날씨 추가/삭제 (향후 Update용)<br>
-```
 
                                           
 ## SQL TABLE 
