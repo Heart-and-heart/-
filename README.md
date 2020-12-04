@@ -64,7 +64,7 @@
 
 ### 메뉴트리
 <div>	
-<img width="1000" src=https://app.diagrams.net/#G1N_jqdMnVAT62DvrUGCnDTPbowIi07L3p>
+<img width="1000" src=https://drive.google.com/file/d/1N_jqdMnVAT62DvrUGCnDTPbowIi07L3p/view?usp=sharing>
 
 
 ## Service 
