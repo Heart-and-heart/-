@@ -1,12 +1,10 @@
 package heartandheart.model.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class WeatherInfo {
 	private int weatherNo;
 	private String weatherStats;

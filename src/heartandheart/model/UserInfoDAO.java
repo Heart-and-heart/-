@@ -1,16 +1,124 @@
 package heartandheart.model;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Properties;
+
+import Util.DBUtil;
+import heartandheart.exception.NotExistException;
+import heartandheart.model.dto.UserInfo;
+
+//ê´€ë¦¬ìê°€ íšŒì›ì •ë³´ ì¡°íšŒ, ì‚­ì œ í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 public class UserInfoDAO {
-	// °ü¸®ÀÚ
-	// ¸ğµç À¯ÀúÁ¤º¸ °¡Á®¿À±â
+static Properties sqlAll = DBUtil.getSqlAll();
 	
-	// Æ¯Á¤ È¸¿ø Á¤º¸ °¡Á®¿À±â
-	
-	// È¸¿ø
-	// È¸¿øÁ¤º¸ ¼öÁ¤ (ºñ¹Ğ¹øÈ£)
+	// ëª¨ë“  íšŒì› ì •ë³´ ê°€ì ¸ì˜¤ê¸°
+	public static ArrayList<UserInfo> getAllUserInfo() throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<UserInfo> datas = null;
 		
-	// Æ¯Á¤È¸¿ø Á¤º¸ °¡Á®¿Í¼­ ·Î±×ÀÎ
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("user.getAll"));
+			rset = pstmt.executeQuery();
+			
+			while (rset.next()) {
+				datas.add(new UserInfo(rset.getString(1), rset.getInt(2),rset.getString(3)));
+			}
+		} finally {
+			DBUtil.close(con, pstmt,rset);
+		}
+		return datas;
+	}
 	
+	// íŠ¹ì •íšŒì›ì •ë³´ ë°˜í™˜
+		public static UserInfo getUserInfo(String id,int pw) throws SQLException ,NotExistException {
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rset = null;
+			UserInfo user = null;
+			try {
+				con = DBUtil.getConnection();
+				pstmt = con.prepareStatement(sqlAll.getProperty("user.getUSR"));
+				pstmt.setString(1, id);
+				pstmt.setInt(2, pw);
+				rset = pstmt.executeQuery();
+				
+				if(!rset.next()) throw new NotExistException("íšŒì›ì¡°íšŒê²°ê³¼ ë°˜í™˜ê°’ ì—†ìŒ.");
+				
+				user = new UserInfo();
+				user.setId(rset.getString(1));
+				user.setPw(rset.getInt(2));
+								
+				return user;
+			}finally {
+				DBUtil.close(con, pstmt,rset);
+			}
+		}
 	
+	// íšŒì›ì •ë³´ ì¶”ê°€
+	public static boolean addUserInfo(String id, int pw,String cid) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("user.insert"));
+			pstmt.setString(1, id);
+			pstmt.setInt(2, pw);
+			pstmt.setString(3, cid);
+			
+			if (pstmt.executeUpdate()==1) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return false;
+	}
 	
+	// íšŒì›ì •ë³´ ì‚­ì œ
+	public static boolean deleteEmotionInfo(String id, int pw) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("user.delete"));
+			pstmt.setString(1,id);
+			pstmt.setInt(2,pw);
+			
+			if (pstmt.executeUpdate()==1) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return false;
+	}
+	
+	// íšŒì›ì •ë³´ ìˆ˜ì •
+	public static boolean updateEmotionInfo(String id, int pw) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("user.update"));
+			pstmt.setInt(1, pw);
+			pstmt.setString(2, id);
+			
+			if (pstmt.executeUpdate()==1) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return false;
+	}
 }

@@ -1,17 +1,17 @@
 package heartandheart.model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.Properties;
 
+import Util.DBUtil;
 import heartandheart.model.dto.WeatherInfo;
-import heartandheart.model.util.DBUtil;
 
+//ê´€ë¦¬ìê°€ ë‚ ì”¨ì •ë³´ ì¶”ê°€, ì¡°íšŒ, ì‚­ì œ í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤
 public class WeatherInfoDAO {
-	// °ü¸®ÀÚ
-	// ¸ğµç ³¯¾¾ Á¤º¸ °¡Á®¿À±â
+	static Properties sqlAll = DBUtil.getSqlAll();
+	
+	// ëª¨ë“  ë‚ ì”¨ ì •ë³´ ê°€ì ¸ì˜¤ê¸°
 	public static ArrayList<WeatherInfo> getAllWeatherInfo() throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -20,46 +20,28 @@ public class WeatherInfoDAO {
 		
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(DBUtil.getSqlAll().getProperty(""));
+			pstmt = con.prepareStatement(sqlAll.getProperty("weather.getAll"));
 			rset = pstmt.executeQuery();
 			
 			while (rset.next()) {
 				datas.add(new WeatherInfo(rset.getInt(1), rset.getString(2)));
 			}
 		} finally {
-			DBUtil.close(con, pstmt);
+			DBUtil.close(con, pstmt,rset);
 		}
 		return datas;
 	}
 	
-	// ³¯¾¾Á¤º¸ ¼±ÅÃ
-	public static WeatherInfo getWeatherInfo(int emotionNo) throws SQLException {
-		Connection con = null;
-		PreparedStatement pstmt = null;
-		ResultSet rset = null;
-		
-		try {
-			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(DBUtil.getSqlAll().getProperty(""));
-			rset = pstmt.executeQuery();
-			
-			if (rset.next()) {
-				return new WeatherInfo(rset.getInt(1), rset.getString(2));
-			}
-		} finally {
-			DBUtil.close(con, pstmt);
-		}
-		return null;
-	}
-	
-	// ³¯¾¾Á¤º¸ Ãß°¡
-	public static boolean addWeatherInfo(int weatherNo, String weatherStats) throws SQLException {
+	// ë‚ ì”¨ì •ë³´ ì¶”ê°€
+	public static boolean addWeatherInfo(int weatherNo, String weatherStat) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(DBUtil.getSqlAll().getProperty(""));
+			pstmt = con.prepareStatement(sqlAll.getProperty("weather.insert"));
+			pstmt.setInt(1, weatherNo);
+			pstmt.setString(2, weatherStat);
 			
 			if (pstmt.executeUpdate()==1) {
 				return true;
@@ -70,14 +52,15 @@ public class WeatherInfoDAO {
 		return false;
 	}
 	
-	// ³¯¾¾Á¤º¸ »èÁ¦
-	public static boolean deleteWeatherInfo(int emotionNo) throws SQLException {
+	// ë‚ ì”¨ì •ë³´ ì‚­ì œ
+	public static boolean deleteWeatherInfo(int weatherNo) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(DBUtil.getSqlAll().getProperty(""));
+			pstmt = con.prepareStatement(sqlAll.getProperty("weather.delete"));
+			pstmt.setInt(1,weatherNo);
 			
 			if (pstmt.executeUpdate()==1) {
 				return true;
@@ -88,14 +71,16 @@ public class WeatherInfoDAO {
 		return false;
 	}
 	
-	// ³¯¾¾Á¤º¸ ¼öÁ¤
-	public static boolean updateWeatherInfo(int weatherNo, String newweatherStats) throws SQLException {
+	// ë‚ ì‹œì •ë³´ ìˆ˜ì •
+	public static boolean updateWeatherInfo(int weatherNo, String weatherStat) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(DBUtil.getSqlAll().getProperty(""));
+			pstmt = con.prepareStatement(sqlAll.getProperty("weather.update"));
+			pstmt.setString(1, weatherStat);
+			pstmt.setInt(2, weatherNo);
 			
 			if (pstmt.executeUpdate()==1) {
 				return true;
