@@ -26,16 +26,6 @@ public class InputController {
 				//회원이 아닐때				
 			}
 		}else if(input.equals("menu1")) {
-			RunningEndUserView.printToUserMenu1(id);;
-		}else if(input.equals("menu2")) {
-			
-		}else if(input.equals("menu3")) {
-			
-		}else if(input.equals("menu4")) {
-			
-		}else if(input.equals("menu5")) {
-			
-		}else if(input.equals("menu6")) {
 			
 		}
 	}

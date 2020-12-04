@@ -1,5 +1,6 @@
 package heartandheart.view;
 
+import heartandheart.controller.HeartandHeartUserController;
 import heartandheart.controller.InputController;
 import heartandheart.model.dto.DiaryInfo;
 import heartandheart.model.dto.UserInfo;
@@ -8,15 +9,17 @@ public class RunningEndUserView {
 	static public void printStartToUser(String userid) {
 		System.out.println(userid+"회원님! 원하는 메뉴를 선택하세요");
 		System.out.println("1. 오늘의 일기 작성");
-		System.out.println("2. 오늘의 일기 수정");
-		System.out.println("3. 커플회원 정보 보기");
-		System.out.println("4. 이번주 나의 감정상태 확인하기");
-		System.out.println("5. 감정을 기준으로 나의 기분다른회원 일기 열람하기");
-		System.out.println("6. 로그아웃");
+		System.out.println("2. 오늘의 일기 수정");			
+		System.out.println("3. 그동안의 일기 열람");
+		System.out.println("4. 일기 삭제");					
+		System.out.println("5. 커플회원 정보 보기");
+		System.out.println("6. 지난주,이번주 나의 감정상태 확인 및 비교하기");
+		System.out.println("7. 감정을 기준으로 나의 기분다른회원 일기 열람하기");		
+		System.out.println("8. 로그아웃");
 		InputController.inputbyClient("menu1");	//원하는 메뉴 선택
 	}
 	
-	static public void printToUserMenu1(String userid) {	//회원의 일기 작성
+	static public void printToUserMenu1(String userid) {	//1. 회원의 일기 작성
 		int dno=0,eno, wno, st, p;
 		String rdate, dc;
 		
@@ -39,44 +42,57 @@ public class RunningEndUserView {
 		System.out.println("공개범위 설정/번호를 입력하세요(0.자기만보기  1.커플이랑 나만 보기  2.전체공개)");
 		p = InputController.inputInt();
 		
-		//Controller에서  new DiaryInfo(dno,userid,eno,wno,rdate,st,dc,p);		
+		HeartandHeartUserController.writeDiary(new DiaryInfo(dno,userid,eno,wno,rdate,st,dc,p));
 		System.out.println("오늘의 일기 작성완료!");
 		
 		printStartToUser(userid);
 	}	
 	
-	static public void printToUserMenu2(String userid) {	//회원의 일기 수정
+	static public void printToUserMenu2(String userid) {	//2.회원의 일기 수정
 		String rdate,dc;
 		System.out.println(userid+"님의 일기를 수정합니다.");
 		System.out.println("수정할 날짜를 입력하세요.");
 		rdate = InputController.inputString();
 		System.out.println("한줄코멘트를 입력해주세요:");
 		dc = InputController.inputString();
-		//HeartandHeartUserController.일기 수정 메소드(userid,rdate,dc);
+		
+		HeartandHeartUserController.updateDiary(dc,rdate,userid);
 		System.out.println("오늘의 일기 수정완료!");
 		printStartToUser(userid);
 	}
 	
-	static public void printToUserMenu4(DiaryInfo diary) {	//감정상태
-		System.out.println(diary.getUserId()+"님 의 이번주 감정상태");
-		//HeartandHeartUserController.이번주 기분점수 출력
-		System.out.println(diary.getUserId()+"님 의 지난주 감정상태");
-		//HeartandHeartUserController.지난주 기분점수 출력
+	static public void printToUserMenu3(String userid) {	//3.일기 열람
+	
+	}
+	
+	static public void printToUserMenu4(String userid) {	//4. 일기 삭제
+		
+	}
+	static public void printToUserMenu5(String userid) {	//5. 커플회원 정보 보기
+		
+	}
+	
+	static public void printToUserMenu6(String userid) {	//6. 지난주,이번주 나의 감정상태 확인 및 비교하기
+		System.out.println(userid+"님 의 이번주 감정상태");
+		HeartandHeartUserController.thisweekeEmotion(userid);
+		System.out.println(userid+"님 의 지난주 감정상태");
+		HeartandHeartUserController.lastweekeEmotion(userid);
 		System.out.println("\n\n");
-		//이번주와 지난주 감정상태 차이에 따른 
+		HeartandHeartUserController.emotionRate(userid);
+		
 		System.out.println("이전화면으로 가려면 0번을 입력하세요.");
-		InputController.inputzero(diary.getUserId());
+		InputController.inputzero(userid);
 	}
 	
 	//////////////////????????????????
-	static public void printToUserMenu5(DiaryInfo diary) {	//감정을 기준으로 나의 기분을 가진 다른 회원 코멘트 보기
+	static public void printToUserMenu7(DiaryInfo diary) {	//감정을 기준으로 나의 기분을 가진 다른 회원 코멘트 보기
 		//지난주 기분점수 출력
 		System.out.println("\n\n");
 		System.out.println("이전화면으로 가려면 0번을 입력하세요.");
 		InputController.inputzero(diary.getUserId());
 	}
 
-	static public void printToUserMenu6(DiaryInfo diary) {
+	static public void printToUserMenu8(DiaryInfo diary) {
 		System.out.println();
 		InputController.inputbyClient("start");
 	}
@@ -84,5 +100,8 @@ public class RunningEndUserView {
 	static public void printToNotUser() {
 		System.out.println("ID/PW를 다시 입력해주세요.");
 		InputController.inputbyClient("start");
+	}
+	static public void printObject(Object o) {
+		System.out.println(o);
 	}
 }

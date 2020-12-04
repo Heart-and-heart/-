@@ -8,88 +8,93 @@ import java.util.ArrayList;
 import java.util.Properties;
 
 import Util.DBUtil;
+import heartandheart.exception.NotExistException;
 import heartandheart.model.dto.EmotionInfo;
 
 //관리자가감정정보 추가, 조회, 삭제, 수정 하기 위한 클래스
 public class EmotionInfoDAO {
 	static Properties sqlAll = DBUtil.getSqlAll();
-		// 모든 감정 정보 가져오기
-		public static ArrayList<EmotionInfo> getAllEmotionInfo() throws SQLException {
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			ResultSet rset = null;
-			ArrayList<EmotionInfo> datas = null;
-			
-			try {
-				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement(sqlAll.getProperty("emotion.getAll"));
-				rset = pstmt.executeQuery();
-				
-				while (rset.next()) {
-					datas.add(new EmotionInfo(rset.getInt(1), rset.getString(2)));
-				}
-			} finally {
-				DBUtil.close(con, pstmt,rset);
+
+	// 모든 감정 정보 가져오기
+	public static ArrayList<EmotionInfo> getAllEmotionInfo() throws SQLException, NotExistException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		ArrayList<EmotionInfo> datas = null;
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("emotion.getAll"));
+			datas = new ArrayList<>();
+			rset = pstmt.executeQuery();
+
+			while (rset.next()) {
+				datas.add(new EmotionInfo(rset.getInt(1), rset.getString(2)));
 			}
-			return datas;
-		}
-		
-		// 감정정보 추가
-		public static boolean addEmotionInfo(int emotionNo, String emotionStat) throws SQLException {
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			
-			try {
-				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement(sqlAll.getProperty("emotion.insert"));
-				pstmt.setInt(1, emotionNo);
-				pstmt.setString(2, emotionStat);
-				
-				if (pstmt.executeUpdate()==1) {
-					return true;
-				}
-			} finally {
-				DBUtil.close(con, pstmt);
+			if (datas.size()==0) {
+				throw new NotExistException();
 			}
-			return false;
+		} finally {
+			DBUtil.close(con, pstmt, rset);
 		}
-		
-		// 감정정보 삭제
-		public static boolean deleteEmotionInfo(int emotionNo) throws SQLException {
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			
-			try {
-				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement(sqlAll.getProperty("emotion.delete"));
-				pstmt.setInt(1,emotionNo);
-				
-				if (pstmt.executeUpdate()==1) {
-					return true;
-				}
-			} finally {
-				DBUtil.close(con, pstmt);
+		return datas;
+	}
+
+	// 감정정보 추가
+	public static boolean addEmotionInfo(int emotionNo, String emotionStat) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("emotion.insert"));
+			pstmt.setString(1, emotionStat);
+
+			if (pstmt.executeUpdate() == 1) {
+				return true;
 			}
-			return false;
+		} finally {
+			DBUtil.close(con, pstmt);
 		}
-		
-		// 감정정보 수정
-		public static boolean updateEmotionInfo(int emotionNo, String newemotionStat) throws SQLException {
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			
-			try {
-				con = DBUtil.getConnection();
-				pstmt = con.prepareStatement(sqlAll.getProperty("emotion.update"));
-				pstmt.setString(1, newemotionStat);
-				pstmt.setInt(2, emotionNo);
-				
-				if (pstmt.executeUpdate()==1) {
-					return true;
-				}
-			} finally {
-				DBUtil.close(con, pstmt);
+		return false;
+	}
+
+	// 감정정보 삭제
+	public static boolean deleteEmotionInfo(int emotionNo) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("emotion.delete"));
+			pstmt.setInt(1, emotionNo);
+
+			if (pstmt.executeUpdate() == 1) {
+				return true;
 			}
-			return false;
+		} finally {
+			DBUtil.close(con, pstmt);
 		}
+		return false;
+	}
+
+	// 감정정보 수정
+	public static boolean updateEmotionInfo(int emotionNo, String newemotionStat) throws SQLException {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+
+		try {
+			con = DBUtil.getConnection();
+			pstmt = con.prepareStatement(sqlAll.getProperty("emotion.update"));
+			pstmt.setString(1, newemotionStat);
+			pstmt.setInt(2, emotionNo);
+
+			if (pstmt.executeUpdate() == 1) {
+				return true;
+			}
+		} finally {
+			DBUtil.close(con, pstmt);
+		}
+		return false;
+	}
 }

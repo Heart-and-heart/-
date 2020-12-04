@@ -1,15 +1,184 @@
 package heartandheart.controller;
 
-public class HeartandHeartUserController {
-/*
-1. 오늘의 일기장을 작성한다
-2. 커플회원의 상태(전체)도 확인한다 (view)
-3. 이번주 내 감정상태를  나열해본다 (수면시간 표현)
-4. 이번주 내 감정상태를  나열해본다 (수면시간 표현)
-5. 지난주랑 이번주 기분점수를 총합하여  비교해서 출력 
-점수 (지난주 점수 - 이번주 점수) , 코멘트 (지난주보다 좋으면 상태 좋아짐
-                                                                     안좋으면 안 좋아짐)
-10점 기준
+import java.sql.SQLException;
 
-*/
+import heartandheart.exception.NotExistException;
+import heartandheart.model.DiaryInfoDAO;
+import heartandheart.model.dto.DiaryInfo;
+import heartandheart.model.dto.UserInfo;
+import heartandheart.view.FailView;
+import heartandheart.view.RunningEndUserView;
+
+public class HeartandHeartUserController {
+	//	작성자 기준으로 다이어리 정보 가져오기
+	public static void selectDiary(UserInfo user) {
+		try {
+			for (DiaryInfo diary : DiaryInfoDAO.USRDiaryInfo(user.getId(),user.getPw())) {
+				RunningEndUserView.printObject(diary);
+			}
+		} catch (SQLException e) {
+			FailView.showError("다이어리 정보 검색 오류");
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			FailView.showError("다이어리 정보가 없습니다.");
+			e.printStackTrace();
+		}
+	}
+
+	// 다이어리 쓰기
+	public static void writeDiary(DiaryInfo diary) {
+		try {
+			if (DiaryInfoDAO.writeDiary(diary.getUserId(), diary.getEmotionNo(), diary.getWeatherNo(), diary.getReportingDate(), diary.getSleepingTime(), diary.getDiaryComment(), diary.getIsPublic())) {
+				RunningEndUserView.printObject("추가 성공");
+			} else {
+				RunningEndUserView.printObject("추가 실패");
+			}
+		} catch (SQLException e) {
+			FailView.showError("다이어리 쓰기 오류");
+			e.printStackTrace();
+		}
+	}
+
+	// 다이어리 수정
+	public static void updateDiary(String newDiaryComment, String reportingDate, String user) {
+		try {
+			if (DiaryInfoDAO.updateDiaryInfo(newDiaryComment, reportingDate, user)) {
+				RunningEndUserView.printObject("수정 성공");
+			} else {
+				RunningEndUserView.printObject("수정 실패");
+			}
+		} catch (SQLException e) {
+			FailView.showError("다이어리 수정 오류");
+			e.printStackTrace();
+		}
+	}
+
+	// 다이어리 삭제
+	public static void deleteDiary(int diaryNo, UserInfo user) {
+		try {
+			if (DiaryInfoDAO.deleteDiary(diaryNo, user.getId())) {
+				RunningEndUserView.printObject("삭제 성공");
+			} else {
+				RunningEndUserView.printObject("삭제 실패");
+			}
+		} catch (SQLException e) {
+			FailView.showError("다이어리 삭제 오류");
+			e.printStackTrace();
+		}
+	}
+
+	// 커플의 다이어리 정보 가져오기
+	public static void howMatchingIdDoes(UserInfo user) {
+		try {
+			for (DiaryInfo diary : DiaryInfoDAO.howMatchingIdDoes(user.getId())) {
+				RunningEndUserView.printObject(diary);
+			}
+		} catch (SQLException e) {
+			FailView.showError("다이어리 정보 검색 오류");
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			FailView.showError("다이어리 정보가 없습니다.");
+			e.printStackTrace();
+		}
+	}
+
+	// 같은 감정인 사람들 코멘트
+	public static void othrePeopleFeels(UserInfo user) {
+		try {
+			for (String s : DiaryInfoDAO.otherPeopleFeels(user.getId())){
+				RunningEndUserView.printObject(s);
+			}
+		} catch (SQLException e) {
+			FailView.showError("다이어리 정보 검색 오류");
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			FailView.showError("다이어리 정보가 없습니다.");
+			e.printStackTrace();
+		}
+	}
+
+	public static void thisweekeEmotion(String user) {	//지난주 이번주 비교
+		try {
+			int thisweekscore = DiaryInfoDAO.thisWeekEmotion(user);
+			System.out.println("이번주 감정 점수는 : "+thisweekscore+"입니다.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			FailView.showError("SQLException error!!");
+		} catch (NotExistException e) {
+			e.printStackTrace();
+			FailView.showError("NotExistException error!!");
+		}
+	}
+
+	public static void lastweekeEmotion(String user) {	//지난주 이번주 비교
+		try {
+			int allscore = DiaryInfoDAO.lastWeekEmotion(user);
+			System.out.println("지난주 감정 점수는 : "+allscore+"입니다.");
+		} catch (SQLException e) {
+			e.printStackTrace();
+			FailView.showError("SQLException error!!");
+		} catch (NotExistException e) {
+			e.printStackTrace();
+			FailView.showError("NotExistException error!!");
+		}
+	}
+
+	public static void emotionRate(String user) {	//지난주 이번주 비교
+		try {
+			int allscore = DiaryInfoDAO.lastWeekEmotion(user);
+			int thisweekscore = DiaryInfoDAO.thisWeekEmotion(user);
+
+			if (thisweekscore>=allscore) {
+				RunningEndUserView.printObject("지난주보다 행복하시네요. 축하드립니다.");
+			} else {
+				RunningEndUserView.printObject("지난주보다 덜 행복하시네요... 맛있는 걸 먹어보는건 어떨까요?");
+			}
+
+		} catch (SQLException e) {
+			FailView.showError("감정 정보 검색 오류");
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			FailView.showError("정보가 없습니다.");
+			e.printStackTrace();
+		}
+	}
+
+	public static void thisWeekSleep(UserInfo user) {
+		try {
+			int score = DiaryInfoDAO.thisWeekSleep(user.getId());
+			if (score>=8) {
+				RunningEndUserView.printObject(user.getId()+"님, 이번주는 평균보다 덜 주무셨어요. 주말엔 꼭 포근한 이불 속에서 푹 쉬세요!");
+			} else {
+				RunningEndUserView.printObject("푹 쉬셨네요 ! 주말엔 등산처럼 활기찬 야외활동을 해보는 게 어떨까요 ~?!");
+			}
+		} catch (SQLException e) {
+			FailView.showError("감정 정보 검색 오류");
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			FailView.showError("정보가 없습니다.");
+			e.printStackTrace();
+		}
+	}
+
+	public static void compareSleepTime(UserInfo user) {
+		try {
+			int thisweektime = DiaryInfoDAO.thisWeekSleep(user.getId());
+			int lastweektime = DiaryInfoDAO.lastWeekSleep(user.getId());
+
+			if (thisweektime>lastweektime) {
+				RunningEndUserView.printObject("지난 주보다 평균 "+ (thisweektime-lastweektime) +"시간 많이 주무셨네요!");
+			} else if (thisweektime<lastweektime) {
+				RunningEndUserView.printObject("지난 주보다 평균 "+ (lastweektime-thisweektime) +"시간 덜 주무셨네요...");
+			} else {
+				RunningEndUserView.printObject("지난 주랑 정확히 똑같이 주무셨어요!!");
+			}
+		} catch (SQLException e) {
+			FailView.showError("수면 정보 검색 오류");
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			FailView.showError("수면 정보가 없습니다.");
+			e.printStackTrace();
+		}
+
+	}
 }
