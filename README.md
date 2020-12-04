@@ -28,16 +28,14 @@
 3.
 
 
-
-
-
-## DATA
-
-
-
 ## STRUCTURE 
 <div>
 <img width="1000" src=https://lh4.googleusercontent.com/dVuPisLaZvbbO7v7B0Yf3T4AXV2zYE-7L7lMroRW51R2pD9GyZVJn1DlOquyORKzETP0_A3eH8OQpMqBZKCMJF7LS0YUBBU4Uyrf3-e02mpv3uciUoatxd3H92q2aEB7xiKuKZtzZA>
+	
+
+## MODELING 	
+	
+
 
 
 ## Service 
@@ -229,8 +227,16 @@ insert into DIARY values(84, 'forever5', 6, 1, to_date('2020-12-14'), 6, '일년
 
 ## JAVA CODE 
 
+
+```JAVA
+
+```
+
+
+
 ## INSPRATION 
 
 1. GITHUB 사용했을때
+연동에서 문제점 
 
 2. 
