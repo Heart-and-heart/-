@@ -1,18 +1,14 @@
 # Java-MiniProject : Dear.Diary
 
-일기장에 적어보는 나의 감정
-
-나의 감정을 누적하여 알아보기 
+거창한 일기가 아닌 감정으로 나의 한달을 알아볼 수 있는 일기장 
 
 ## Why we select this Topic?
 http://dongascience.donga.com/news.php?idx=41968
 - 20,30 세대의 우울감이 더 심해지고 있음
-셀프 헬스 ? 라고 자신들만의 방법을 찾아나가고 있음
-멘탈 관리 
+사소한 것이라도 자신의 감정을 글로 적어보면 그 감정에서 떨어져서 바라볼 수 있기 때문에 
+마음을 다스리는데 도움이 된다고 얘기한다. 
+또 다른 사람과 감정을 공감하는 것이 우울감을 감소시키는데?? ?? 
 
-어디다 적는 것이 스트레스 해소 도움 
-
-다른 사람들과 공감을 얻을 수 있음 
 
 ## DATA
 
@@ -30,3 +26,7 @@ http://dongascience.donga.com/news.php?idx=41968
 ## JAVA CODE 
 
 ## INSPRATION 
+
+1. GITHUB 사용했을때
+
+2. 
