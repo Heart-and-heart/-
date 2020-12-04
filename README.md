@@ -67,7 +67,7 @@
 ## SQL TABLE 
 
 + USER INFORMAITON 
-
+```
 drop table USERINFO;
 
 create table USERINFO(
@@ -82,10 +82,10 @@ insert into USERINFO values('coral2', '222222', 'ace123');
 insert into USERINFO values('doglover3', '333333', 'bestyou1');
 insert into USERINFO values('enough4', '444444', null);
 insert into USERINFO values('forever5', '555555', null); 
-
+```
 
 + EMOTIONS
-
+```
 drop table EMOTIONS;
 
 create table EMOTIONS(
@@ -101,10 +101,10 @@ insert into EMOTIONS values(3, '걱정돼');
 insert into EMOTIONS values(4, '그럭저럭'); 
 insert into EMOTIONS values(5, '평온해');
 insert into EMOTIONS values(6,' 최고');
-
+```
 
 + WEATHER 
-
+```
 drop table WEATHER;
 
 create table WEATHER(
@@ -119,9 +119,9 @@ insert into WEATHER values(3, '비가와');
 insert into WEATHER values(4, '추워');
 insert into WEATHER values(5, '구름둥둥');
 insert into WEATHER values(6, '눈온다'); 
-
+```
 + DIARY 
-
+```
 drop table DIARY;
 
 create table DIARY(
@@ -220,7 +220,7 @@ insert into DIARY values(81, 'coral2', 6, 1, to_date('2020-12-14'), 6, '이제 �
 insert into DIARY values(82, 'doglover3', 5, 1, to_date('2020-12-14'), 6, '점심이 맛있었다', 0);
 insert into DIARY values(83, 'enough4', 6, 1, to_date('2020-12-14'), 6, '이사 첫 날, 새 집에는 햇살이 잘 들어서 좋다.', 1);
 insert into DIARY values(84, 'forever5', 6, 1, to_date('2020-12-14'), 6, '일년만에 오프라인 공연 보러 다녀옴! 매우 신남!!', 1);
-
+```
 
 
 ## JAVA CODE 
