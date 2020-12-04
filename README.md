@@ -67,7 +67,9 @@
 ## SQL TABLE 
 
 + USER INFORMAITON 
+
 ```
+SQL
 drop table USERINFO;
 
 create table USERINFO(
@@ -85,7 +87,9 @@ insert into USERINFO values('forever5', '555555', null);
 ```
 
 + EMOTIONS
+
 ```
+SQL
 drop table EMOTIONS;
 
 create table EMOTIONS(
@@ -104,7 +108,9 @@ insert into EMOTIONS values(6,' 최고');
 ```
 
 + WEATHER 
+
 ```
+SQL
 drop table WEATHER;
 
 create table WEATHER(
@@ -121,7 +127,9 @@ insert into WEATHER values(5, '구름둥둥');
 insert into WEATHER values(6, '눈온다'); 
 ```
 + DIARY 
+
 ```
+SQL
 drop table DIARY;
 
 create table DIARY(
