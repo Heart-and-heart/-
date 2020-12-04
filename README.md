@@ -13,7 +13,7 @@
 
 <div>
 <img width="800" src=https://user-images.githubusercontent.com/73386460/101110209-dcb81300-361b-11eb-8e5a-75cf0469f02a.jpg><br>
-<출처> http://dongascience.donga.com/news.php?idx=41968
+	<center> <출처> http://dongascience.donga.com/news.php?idx=41968 </center>
 
 셀프 멘탈 케어!
 우울감이 더 심해지고 있는 포스트 코로나 시대,
