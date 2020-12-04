@@ -12,10 +12,14 @@
 ### topic 
 
 <div>
-<img width="500" src=https://user-images.githubusercontent.com/73386460/101110209-dcb81300-361b-11eb-8e5a-75cf0469f02a.jpg>
+<img width="800" src=https://user-images.githubusercontent.com/73386460/101110209-dcb81300-361b-11eb-8e5a-75cf0469f02a.jpg><br>
 <출처> http://dongascience.donga.com/news.php?idx=41968
 
-20.30세대의 우울감이 더 심해지고 있는때에 ~~~~~ 은 다양한 방식으로 이를 해결해보려고 노력한다. 
+셀프 멘탈 케어!
+우울감이 더 심해지고 있는 포스트 코로나 시대,
+사람들은 다양한 방식으로 이를 해결해보려고 노력한다. 
+
+
 사소한 것이라도 자신의 감정을 글로 적어보면 그 감정에서 떨어져서 바라볼 수 있기 때문에 
 마음을 다스리는데 도움이 된다. 
 또 다른 사람들과 감정을 확인하고 공감하는 것은 우울감을 도움이 될 것이다. 
