@@ -1,9 +1,8 @@
 # Java-MiniProject : Dear.Diary
 
-
-날씨, 수면상태, 
 <b>Dear.Diary</b>는 <br>
-:pencil2: 매일 자신의 감정과 연관된 상태를 간단히 기록하고,  <br>
+:thermometer: 날씨, 수면상태, 그 날의 기분, 하루 단상 등
+:pencil2: 매일 자신의 감정과 연관된 상태를 간단히 기록 및 분석하고,  <br>
 :couple: 다른 사람의 기록을 살펴보는 과정을 통해  <br>
 :muscle: 나와 주변의 마음건강을 유지하도록 돕는  <br>
 :massage: 셀프 멘탈 헬스케어 체크 SNS입니다. <br>
@@ -17,7 +16,7 @@
 <img width="800" src=https://user-images.githubusercontent.com/73386460/101110209-dcb81300-361b-11eb-8e5a-75cf0469f02a.jpg><br>
 	<a href="http://dongascience.donga.com/news.php?idx=41968"><center> 출처 : 동아사이언스 </center></a>
 
-#### 정신줄 꽉 잡아! <br>
+#### 정신줄 꽉 잡아요! <br>
 :mask: 사회적 거리두기의 일상화로 우울감이 심해지고 있는 포스트 코로나 시대,   <br>
 사람들은 다양한 방식으로 이를 해결하려 노력하고 있습니다. 
 <p></p>
@@ -40,8 +39,9 @@
 <p></p>
 
 #### Dear.Diary<br>
-:no_mouth: 이렇게 메말라 가는 현대인의 감정을 돌보아주기 위해 탄생한 셀프 멘탈 헬스케어 체크 SNS 플랫폼
-<h2>Dear.Diary를 소개합니다!!</h2>
+:no_mouth: 이렇게 메말라 가는 현대인의 감정을 돌보기 위해 
+셀프 멘탈 헬스케어 체크 SNS 플랫폼
+<h2>Dear.Diary가 탄생했습니다!!</h2>
 <p><p></p>
 
 
