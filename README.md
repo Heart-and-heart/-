@@ -1,7 +1,7 @@
 # Java-MiniProject : Dear.Diary
 
 <b>Dear.Diary</b>는 <br>
-:thermometer: 날씨, 수면상태, 그 날의 기분, 하루 단상 등<br>
+:thermometer:  날씨, 수면상태, 그 날의 기분, 하루 단상 등<br>
 :pencil2: 자신의 감정과 연관된 상태를 매일 간단히 기록 및 분석하고,  <br>
 :couple: 다른 사람의 기록을 살펴보는 과정을 통해  <br>
 :muscle: 나와 주변의 마음건강을 유지하도록 돕는  <br>
