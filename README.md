@@ -45,18 +45,18 @@
 Dear.Diary가 탄생했습니다!!<p><p><p></p>
 
 
-<div style="width:300px; border:1px solid grey; float:left; margin-right:10px;">
-#### CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
+<div style="width=49%; border:1px solid grey; float:left; margin-right:10px;">
+	<b>CASE 1. REGULAR DIARY를 사용 중인 A씨 일기</b>
 <img height="200" img src = "https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
-오늘은 아침부터 이유없이 기분이 울적했다.<br>
-퇴근 길에 수다로 기분을 전환해보려고 만난<br>연인은 지루한지 하품을 해댔다.<br>
+오늘은 아침부터 이유없이 기분이 울적했다. 퇴근 길에 기분을 전환해보려고 만난 연인은 지루한지 하품을 해댔다.<br>
 즉석떢볶이 집에서는 맵기 정도를 두고는 싸웠다.<p> 
 	
 연인과 싸우고 돌아오는 골목길,<br>비가 쏟아진다.<p>
 우산도 없는데 서럽다.<br>
 지금 내 얼굴 위 빗방울이 빗물인지 눈물인지 ㅁㅓ르겠ㄷㅏ★<p>
 </div>
-<div style="width:300px; border:1px solid grey; float:left;">
+
+<div style="width=49%; border:1px solid grey; float:right;">
 #### CASE 2. DEAR DIARY를 사용 중인 B씨 일기
 <img height="200" img src = "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-15/e35/18888791_638450609677681_3614820475483455488_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=QDLB95sixEMAX_flfiT&tp=1&oh=05de921064cb026d07b2fea7c5ba94f6&oe=5FF700F1">
 아침에 일어났는데 기분이 울적했다.<br> DEAR DIARY에 누적된 일기데이터 분석에 의하면<br> 나는 비오는 날 평소보다 기분이 울적한 경향이 있다.<br>
