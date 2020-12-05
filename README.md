@@ -2,14 +2,15 @@
 
 <b>Dear.Diary</b>는 <br>
 :thermometer:  날씨, 수면상태, 그 날의 기분, 하루 단상 등<br>
-:pencil2: 자신의 감정과 연관된 상태를 매일 간단히 기록 및 분석하고,  <br>
+:pencil2: 자신의 감정과 연관된 외부 및 내부 상태를 매일 간단히 기록 및 분석하고,  <br>
 :couple: 다른 사람의 기록을 살펴보는 과정을 통해  <br>
 :muscle: 나와 주변의 마음건강을 유지하도록 돕는  <br>
 :massage: 셀프 멘탈 헬스케어 체크 SNS입니다. <br>
 
 <p><p>
 	
-## Why we select this Topic?<br><br>
+## WHY WE SELECT THIS TOPIC?<br><br>
+
 ### topic <br>
 
 <div>
@@ -19,32 +20,59 @@
 #### 정신줄 꽉 잡아요! <br>
 :mask: 사회적 거리두기의 일상화로 우울감이 심해지고 있는 포스트 코로나 시대,   <br>
 사람들은 다양한 방식으로 이를 해결하려 노력하고 있습니다. 
-<p></p>
+<p><p></p>
 	
 #### 지피지기 <br>
 :notebook: 정신건강 전문의들은 일기쓰기를 추천합니다. <br>
 :pencil2: 사소한 것이라도 자신의 감정을 글로 적어보면  <br>
 :eyes: 그 감정에서 떨어져서 바라볼 수 있기 때문에 마음을 다스리는데 도움이 되기 때문입니다.  <br>
-<p></p>
-
+<p><p></p>
+<p>
 #### 이심전심 <br>
 :family: 또 이럴 때일수록 서로를 살피고 공감하는 것이 필요하다고 권합니다.<br>
-<p></p>
+<p><p></p>
 
 #### 바쁘다 바빠 현대사회<br>
 :clock8: 하지만... 늦어지는 퇴근시간, 휴대폰만 열면 넘쳐나는 재미있는 컨텐츠들 사이에서 :iphone:  <br>
 :interrobang: 마지막으로 일기를 써본 적이 언제인지도 모르겠어요.  <br>
 
 :relieved: 마스크 속에 가려진 감정들을 속시원하게 끄집어내 본 적도 언제인지 모르겠고요. <br>
-<p></p>
+<p><p></p>
 
 #### Dear.Diary<br>
 :no_mouth: 이렇게 메말라 가는 현대인의 감정을 돌보기 위해<br> 
 셀프 멘탈 헬스케어 체크 SNS 플랫폼
-<h2>Dear.Diary가 탄생했습니다!!</h2>
-<p><p></p>
+Dear.Diary가 탄생했습니다!!<p><p><p></p>
 
 
+<div style="width:300px; border:1px solid grey; float:left; margin-right:10px;">
+#### CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
+<img height="200" img src = "https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
+오늘은 아침부터 이유없이 기분이 울적했다.<br>
+퇴근 길에 수다로 기분을 전환해보려고 만난<br>연인은 지루한지 하품을 해댔다.<br>
+즉석떢볶이 집에서는 맵기 정도를 두고는 싸웠다.<p> 
+	
+연인과 싸우고 돌아오는 골목길,<br>비가 쏟아진다.<p>
+우산도 없는데 서럽다.<br>
+지금 내 얼굴 위 빗방울이 빗물인지 눈물인지 ㅁㅓ르겠ㄷㅏ★<p>
+</div>
+<div style="width:300px; border:1px solid grey; float:left;">
+#### CASE 2. DEAR DIARY를 사용 중인 B씨 일기
+<img height="200" img src = "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-15/e35/18888791_638450609677681_3614820475483455488_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=QDLB95sixEMAX_flfiT&tp=1&oh=05de921064cb026d07b2fea7c5ba94f6&oe=5FF700F1">
+아침에 일어났는데 기분이 울적했다.<br> DEAR DIARY에 누적된 일기데이터 분석에 의하면<br> 나는 비오는 날 평소보다 기분이 울적한 경향이 있다.<br>
+일기예보를 보니 역시 비소식이다.<br> 왜인지 아니까 기분도 덜 처진다.<br> 
+퇴근 길 연인을 만났는데 자꾸 하품을 했다.<P> 
+DEAR DIARY의 커플정보를 보니<br> 요즘 너댓시간 밖에 못 자던데,<br> 피로한 모양이다. 안쓰럽다.<br>
+연인이 내가 꾸물꾸물한 날 우울해지니까<br> 매운 거 먹자고 하길래,<br>
+잠도 못잤는데 매운 거 먹으면 배탈난다고<br> 겁주고 죽집에 갔다.<br>
+나는 매운낙지죽, 연인은 전복죽을 먹고<br> 집에 가서 푹 자라고 일찍 들여보냈다.<p>
+골목길에 들어서는데 비가 쏟아졌다.<br> 이럴 줄 알고 아침에 우산 챙겼지롱!
+
+</div>
+
+
+					  
+<p>
 
 ### Programing 
 <div>
@@ -71,7 +99,6 @@
 
 ## Service 
 <div>	
-</br></p>
 
 ### 1. USER 행동 시나리오		
 &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;&nbsp;:key: 로그인 <br>
@@ -97,7 +124,7 @@
 &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:heavy_plus_sign: id님, 푹 쉬셨네요 ! 주말엔 등산처럼 활기찬 야외활동을 해보는 게 어떨까요 ~?! <br>
 &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp; &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:heavy_minus_sign: 이번주는 평소보다 덜 주무셨어요. 주말엔 꼭 포근한 이불 속에서 푹 쉬세요!  <br>
 				 <br>
-				 
+
 ### 2. 관리자 행동 시나리오
 <div>	
 	</br</p>
@@ -106,7 +133,9 @@
 &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:busts_in_silhouette: 2) 감정 테이블에 감정 추가/삭제 (향후 Update용) <br>
 &nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;	&nbsp;:droplet: 3) 날씨 테이블에 날씨 추가/삭제 (향후 Update용) <br>
 
-                                          
+
+</br></p>
+
 ## SQL TABLE 
 
 + USER INFORMAITON 
