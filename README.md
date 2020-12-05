@@ -27,7 +27,7 @@
 :pencil2: 사소한 것이라도 자신의 감정을 글로 적어보면  <br>
 :eyes: 그 감정에서 떨어져서 바라볼 수 있기 때문에 마음을 다스리는데 도움이 되기 때문입니다.  <br>
 <p><p></p>
-<p>
+
 #### 이심전심 <br>
 :family: 또 이럴 때일수록 서로를 살피고 공감하는 것이 필요하다고 권합니다.<br>
 <p><p></p>
@@ -42,22 +42,22 @@
 #### Dear.Diary<br>
 :no_mouth: 이렇게 메말라 가는 현대인의 감정을 돌보기 위해<br> 
 셀프 멘탈 헬스케어 체크 SNS 플랫폼
-Dear.Diary가 탄생했습니다!!<p><p><p></p>
+Dear.Diary가 탄생했습니다!!<p>
+DD와 함께 하면 삶이 어떻게 달라지는지 보실래요? <p><p></p>
 
-
-<div style="width=49%; border:1px solid grey; float:left; margin-right:10px;">
-	<b>CASE 1. REGULAR DIARY를 사용 중인 A씨 일기</b>
-<img height="200" img src = "https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
-오늘은 아침부터 이유없이 기분이 울적했다. 퇴근 길에 기분을 전환해보려고 만난 연인은 지루한지 하품을 해댔다.<br>
+<div style="display: inline-block">
+<img src="https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
+CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
+<p>오늘은 아침부터 이유없이 기분이 울적했다.<br>
+퇴근 길에 기분전환하려 만난 연인은 지루한지 하품을 해댔다.<br>
 즉석떢볶이 집에서는 맵기 정도를 두고는 싸웠다.<p> 
 	
 연인과 싸우고 돌아오는 골목길,<br>비가 쏟아진다.<p>
 우산도 없는데 서럽다.<br>
-지금 내 얼굴 위 빗방울이 빗물인지 눈물인지 ㅁㅓ르겠ㄷㅏ★<p>
+지금 내 얼굴 위 빗방울이 빗물인지 눈물인지 ㅁㅓ르겠ㄷㅏ★</p>
 </div>
-
-<div style="width=49%; border:1px solid grey; float:right;">
-#### CASE 2. DEAR DIARY를 사용 중인 B씨 일기
+<div style="display: inline-block">
+CASE 2. DEAR DIARY를 사용 중인 B씨 일기
 <img height="200" img src = "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-15/e35/18888791_638450609677681_3614820475483455488_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=QDLB95sixEMAX_flfiT&tp=1&oh=05de921064cb026d07b2fea7c5ba94f6&oe=5FF700F1">
 아침에 일어났는데 기분이 울적했다.<br> DEAR DIARY에 누적된 일기데이터 분석에 의하면<br> 나는 비오는 날 평소보다 기분이 울적한 경향이 있다.<br>
 일기예보를 보니 역시 비소식이다.<br> 왜인지 아니까 기분도 덜 처진다.<br> 
@@ -69,10 +69,6 @@ DEAR DIARY의 커플정보를 보니<br> 요즘 너댓시간 밖에 못 자던�
 골목길에 들어서는데 비가 쏟아졌다.<br> 이럴 줄 알고 아침에 우산 챙겼지롱!
 
 </div>
-
-
-					  
-<p>
 
 ### Programing 
 <div>
@@ -321,9 +317,11 @@ COMMIT;
 <div>
 1. GITHUB 연동 문제점 
 
-2. LOGIN
-구조 짜기 
-
-
-- MVC main에 한 번에 구현하면 좋았겠지만 controller를 활용하느라 만들기는 더 복잡했다
-- 하지만 수정할 때 편해서 유지보수에 역시 좋다는  
+2. UPDATE를 고려한 설계
+1) LOGIN
+2) 구조 짜기 
+ - MVC, DO를 위해 CONTROLLER, VIEW, SERVICE, DAO, DTO 등 여러 개로 클래스를 나눠서 개발했다.
+   main에 한 번에 구현하면 훨 편했을텐데 controller를 거쳐 가도록 만들기는 더 복잡했다
+- 하지만 수정할 때 편해서 유지보수에 역시 좋았다는...
+3) SEQUENCE 기능의 활용
+- ADMIN 입장에서 감정, 날씨 등의 정보를 추가할 때 따로 일련번호를 확인할 필요가 없도록 각 테이블의 일련번호를 SEQUENCE로 매겨지게 했다.
