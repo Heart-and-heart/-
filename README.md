@@ -44,7 +44,7 @@
 Dear.Diary가 탄생했습니다!!<p>
 DD와 함께 하면 삶이 어떻게 달라지는지 보실래요? <p><p></p>
 
->####CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
+>#### CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
 ><img align="left" height="200" img src="https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
 >오늘은 아침부터 이유없이 기분이 울적했다.<br>
 >퇴근 길에 기분전환하려 만난 연인은 지루한지 하품을 해댔다.<br>
