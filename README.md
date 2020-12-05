@@ -45,9 +45,8 @@
 Dear.Diary가 탄생했습니다!!<p>
 DD와 함께 하면 삶이 어떻게 달라지는지 보실래요? <p><p></p>
 
-<div style="display: inline-block">
-<img src="https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
-CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
+#### CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
+<img height="200" img src="https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
 <p>오늘은 아침부터 이유없이 기분이 울적했다.<br>
 퇴근 길에 기분전환하려 만난 연인은 지루한지 하품을 해댔다.<br>
 즉석떢볶이 집에서는 맵기 정도를 두고는 싸웠다.<p> 
@@ -55,20 +54,22 @@ CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
 연인과 싸우고 돌아오는 골목길,<br>비가 쏟아진다.<p>
 우산도 없는데 서럽다.<br>
 지금 내 얼굴 위 빗방울이 빗물인지 눈물인지 ㅁㅓ르겠ㄷㅏ★</p>
-</div>
-<div style="display: inline-block">
-CASE 2. DEAR DIARY를 사용 중인 B씨 일기
+
+
+#### CASE 2. DEAR DIARY를 사용 중인 B씨 일기
 <img height="200" img src = "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-15/e35/18888791_638450609677681_3614820475483455488_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=QDLB95sixEMAX_flfiT&tp=1&oh=05de921064cb026d07b2fea7c5ba94f6&oe=5FF700F1">
-아침에 일어났는데 기분이 울적했다.<br> DEAR DIARY에 누적된 일기데이터 분석에 의하면<br> 나는 비오는 날 평소보다 기분이 울적한 경향이 있다.<br>
-일기예보를 보니 역시 비소식이다.<br> 왜인지 아니까 기분도 덜 처진다.<br> 
+아침에 일어났는데 기분이 울적했다.<br> 
+DEAR DIARY에 누적된 일기데이터 분석에 의하면 나는 비오는 날 평소보다 기분이 울적한 경향이 있다.<br>
+일기예보를 보니 역시 비소식이다.<br> 
+왜인지 아니까 안 우울하다.<br> 
 퇴근 길 연인을 만났는데 자꾸 하품을 했다.<P> 
 DEAR DIARY의 커플정보를 보니<br> 요즘 너댓시간 밖에 못 자던데,<br> 피로한 모양이다. 안쓰럽다.<br>
 연인이 내가 꾸물꾸물한 날 우울해지니까<br> 매운 거 먹자고 하길래,<br>
 잠도 못잤는데 매운 거 먹으면 배탈난다고<br> 겁주고 죽집에 갔다.<br>
-나는 매운낙지죽, 연인은 전복죽을 먹고<br> 집에 가서 푹 자라고 일찍 들여보냈다.<p>
-골목길에 들어서는데 비가 쏟아졌다.<br> 이럴 줄 알고 아침에 우산 챙겼지롱!
+나는 매운낙지죽, 연인은 전복죽을 먹고 가서 푹 자라고 일찍 들여보냈다.<p>
+골목길에 들어서는데 비가 쏟아졌다.<br> 
+이럴 줄 알고 아침에 우산 챙겼지롱!</p>
 
-</div>
 
 ### Programing 
 <div>
