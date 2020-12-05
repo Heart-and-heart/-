@@ -46,9 +46,9 @@
 
 ### Programing 
 <div>
-1. 
-2.
-3.
+<p>1. jdbc 구조 
+<p>2. 
+<p>3.
 
 
 ## STRUCTURE 
