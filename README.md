@@ -68,12 +68,6 @@ Dear.Diary가 탄생했습니다!!<p></p>
 >골목길에 들어서는데 비가 쏟아졌다.<br>이럴 줄 알고 아침에 우산 챙겼지롱!</p>
 
 
-### Programing 
-<div>
-<p>1. jdbc 구조 
-<p>2. 
-<p>3.
-
 
 ## STRUCTURE 
 
@@ -87,8 +81,7 @@ Dear.Diary가 탄생했습니다!!<p></p>
 
 ### 메뉴트리
 <div>	
-<img width="1000" src=https://user-images.githubusercontent.com/73386460/101163601-2eda5200-3677-11eb-8e37-b05833606e81.PNG>
-
+<img width="1000" src="">
 
 ## Service 
 <div>	
