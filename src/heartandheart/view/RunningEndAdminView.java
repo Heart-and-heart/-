@@ -2,6 +2,7 @@ package heartandheart.view;
 
 import heartandheart.controller.HeartandHeartAdminController;
 import heartandheart.controller.InputController;
+import heartandheart.exception.NotExistException;
 import heartandheart.exception.NotIntegerException;
 import heartandheart.model.dto.DiaryInfo;
 
@@ -67,14 +68,16 @@ public class RunningEndAdminView {
 		System.out.println("감정table 수정");	
 		System.out.println("감정테이블 목록입니다.");
 		HeartandHeartAdminController.selectAllEmotions();
-		System.out.println("삭제할 감정번호를 입력해주세요.");	
+		System.out.println("수정할 감정번호를 입력해주세요.");	
 		try {
 			int emotionno = InputController.inputInt();
-			HeartandHeartAdminController.deleteEmotion(emotionno);
+			System.out.println("새로운 감정상태를 입력해주세요.");
+			String emtionstat = InputController.inputString();
+			HeartandHeartAdminController.updateEmotion(emotionno, emtionstat);;
 		} catch (NotIntegerException e) {
 			FailView.showError("정수만 입력가능합니다.");
 			e.printStackTrace();
-		}
+		} 
 	}
 	
 	static public void printToAdminMenu5() {	
@@ -88,14 +91,17 @@ public class RunningEndAdminView {
 		System.out.println("날씨table 수정");	
 		System.out.println("날씨테이블 목록입니다.");
 		HeartandHeartAdminController.selectAllWeathers();
-		System.out.println("삭제할 날씨번호를 입력해주세요.");	
+		System.out.println("수정할 날씨번호를 입력해주세요.");	
 		try {
+			
 			int weatherno = InputController.inputInt();
-			HeartandHeartAdminController.deleteWeather(weatherno);
+			System.out.println("새로운 날씨정보를 입력해주세요.");
+			String weatherstat = InputController.inputString();
+			HeartandHeartAdminController.updateweather(weatherno, weatherstat);
 		} catch (NotIntegerException e) {
 			FailView.showError("정수만 입력가능합니다.");
 			e.printStackTrace();
-		}
+		} 
 	}
 	
 	static public void printObject(Object o) {
