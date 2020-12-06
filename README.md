@@ -150,6 +150,7 @@ insert into USERINFO values('doglover3', 333333, 'bestyou1');
 insert into USERINFO values('enough4', 444444, null);
 insert into USERINFO values('forever5', 555555, null); 
 insert into USERINFO values('admin', 1234, null); 
+
 COMMIT;          
 ```
 
