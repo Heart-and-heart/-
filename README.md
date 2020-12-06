@@ -307,7 +307,8 @@ https://ovenapp.io/view/QUf3DYCUbvbcQd5bSBf7GcjnouSksHxb/Bng3c
  	- window 자격증명 삭제로 해결했다.
 
 2. UPDATE를 고려한 설계
-```1) LOGIN
+```
+	1) LOGIN
 	2) 구조 짜기
  	- MVC를 위해 CONTROLLER, VIEW, SERVICE, DAO, DTO 등 여러 개로 클래스를 나눠서 개발했다.
  	  main에 한 번에 구현하면 훨 편했을텐데 controller를 거쳐 가도록 만드느라 복잡했다
