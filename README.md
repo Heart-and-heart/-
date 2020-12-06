@@ -306,11 +306,16 @@ COMMIT;
 
 ## INSPRATION 
 <div>
-1. GITHUB 연동 문제점 
+1. GITHUB 연동 문제점
+1) 버전 오류
+git에 올린 초기 버전에 맞지 않게 다운로드하고 수정하다보니 push, pull에 문제 
+인터넷으로 버전 정리를 하면서 해결했다.
+2) denied 되는 문제
+window 자격증명 삭제로 해결했다.
 
 2. UPDATE를 고려한 설계
 1) LOGIN
-2) 구조 짜기 
+2) 구조 짜기
  - MVC를 위해 CONTROLLER, VIEW, SERVICE, DAO, DTO 등 여러 개로 클래스를 나눠서 개발했다.
    main에 한 번에 구현하면 훨 편했을텐데 controller를 거쳐 가도록 만드느라 복잡했다
 - 하지만 수정과정에서 에러가 발생할 때마다 어느 지점으로 가서 손을 볼 지 파악할 수 있어 유용했다
