@@ -13,9 +13,9 @@ public class RunningEndAdminView {
 			System.out.println("1. 모든 회원 정보 열람하기");
 			System.out.println("2. 모든 다이어리 정보 열람하기");
 			System.out.println("3. 감정정보 추가");
-			System.out.println("4. 감정정보 삭제");
+			System.out.println("4. 감정정보 수정");
 			System.out.println("5. 날씨정보 추가");
-			System.out.println("6. 날씨정보 삭제");
+			System.out.println("6. 날씨정보 수정");
 			System.out.println("7. 로그아웃");
 			
 			try {
@@ -64,7 +64,7 @@ public class RunningEndAdminView {
 	}
 	
 	static public void printToAdminMenu4() {	
-		System.out.println("감정table 삭제");	
+		System.out.println("감정table 수정");	
 		System.out.println("감정테이블 목록입니다.");
 		HeartandHeartAdminController.selectAllEmotions();
 		System.out.println("삭제할 감정번호를 입력해주세요.");	
@@ -81,17 +81,17 @@ public class RunningEndAdminView {
 		System.out.println("날씨table 추가");		
 		System.out.println("추가할 날씨를 입력해주세요.");	
 		String weathernstat = InputController.inputString();
-		HeartandHeartAdminController.addEmotion(weathernstat);
+		HeartandHeartAdminController.addWeather(weathernstat);
 	}		
 
 	static public void printToAdminMenu6() {	
-		System.out.println("날씨table 삭제");	
+		System.out.println("날씨table 수정");	
 		System.out.println("날씨테이블 목록입니다.");
 		HeartandHeartAdminController.selectAllWeathers();
 		System.out.println("삭제할 날씨번호를 입력해주세요.");	
 		try {
 			int weatherno = InputController.inputInt();
-			HeartandHeartAdminController.deleteEmotion(weatherno);
+			HeartandHeartAdminController.deleteWeather(weatherno);
 		} catch (NotIntegerException e) {
 			FailView.showError("정수만 입력가능합니다.");
 			e.printStackTrace();

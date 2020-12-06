@@ -10,7 +10,7 @@ public class RunningStartView {
 		String id;
 		int pw;
 		while(true) {
-			System.out.println("********Welcome Heart and Heart Diary********");
+			System.out.println("********Welcome to Dear Diary********");
 			System.out.println("ID를 입력하세요:");
 			id = InputController.inputString();
 			System.out.println("PW를 입력하세요.:");
@@ -21,7 +21,7 @@ public class RunningStartView {
 			} catch (NotIntegerException e) {
 				FailView.showError("정수만 입력가능합니다.");
 				e.printStackTrace();
-			}
+			}			
 			System.out.println("로그인 재시도를 원하시면 R을 입력하세요");
 			if(!InputController.inputString().equals("R")) {
 				System.out.println("프로그램을 종료합니다.");

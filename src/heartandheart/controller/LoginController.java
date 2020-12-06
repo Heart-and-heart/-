@@ -9,7 +9,9 @@ import heartandheart.model.dto.UserInfo;
 import heartandheart.view.FailView;
 import heartandheart.view.RunningEndAdminView;
 import heartandheart.view.RunningEndUserView;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class LoginController {
 	static ArrayList<UserInfo> datas;
 
@@ -30,8 +32,11 @@ public class LoginController {
 				flag=true;
 				if(id.equals("admin") && pw==1234) {	//관리자
 					RunningEndAdminView.printStartToAdmin(id);
+					log.info("관리자가 로그인함!");
+				}else {
+				RunningEndUserView.printStartToUser(id);
+				log.info(id+"회원님이 로그인함!");
 				}
-				RunningEndUserView.printStartToUser(id);;
 			}
 		}
 		if(!flag)	RunningEndUserView.printToNotUser();

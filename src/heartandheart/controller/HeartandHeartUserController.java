@@ -30,7 +30,7 @@ public class HeartandHeartUserController {
 	// 다이어리 쓰기
 	public static void writeDiary(DiaryInfo diary) {
 		try {
-			if (DiaryInfoDAO.writeDiary(diary.getUserId(), diary.getEmotionNo(), diary.getWeatherNo(), diary.getReportingDate(), diary.getSleepingTime(), diary.getDiaryComment(), diary.getIsPublic())) {
+			if (DiaryInfoDAO.writeDiary(diary.getUserId(), diary.getEmotionNo(), diary.getWeatherNo(), diary.getSleepingTime(), diary.getDiaryComment(), diary.getIsPublic())) {
 				RunningEndUserView.printObject("추가 성공");
 			} else {
 				RunningEndUserView.printObject("추가 실패");
@@ -40,11 +40,11 @@ public class HeartandHeartUserController {
 			e.printStackTrace();
 		}
 	}
-
+	
 	// 다이어리 수정
-	public static void updateDiary(String newDiaryComment, String reportingDate, String user) {
+	public static void updateDiary(String newDiaryComment, int diaryno) {
 		try {
-			if (DiaryInfoDAO.updateDiaryInfo(newDiaryComment, reportingDate, user)) {
+			if (DiaryInfoDAO.updateDiaryInfo(newDiaryComment, diaryno)) {
 				RunningEndUserView.printObject("수정 성공");
 			} else {
 				RunningEndUserView.printObject("수정 실패");

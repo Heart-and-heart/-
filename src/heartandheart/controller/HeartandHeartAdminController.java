@@ -147,7 +147,6 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 
 	// 모든 유저 검색
 	public static void selectAllUsers() {
-
 		try {
 			for (UserInfo user : UserInfoDAO.getAllUserInfo()) {
 				RunningEndAdminView.printObject(user);
@@ -222,7 +221,6 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 
 	// 유저 한명의 다이어리 검색
 	public static void selectDiarys(UserInfo user) {
-
 		try {
 			for (DiaryInfo diary : DiaryInfoDAO.USRDiaryInfo(user.getId())) {
 				RunningEndAdminView.printObject(diary);
@@ -232,16 +230,6 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 			e.printStackTrace();
 		} catch (NotExistException e) {
 			FailView.showError("다이어리 검색 반환값 없음");
-			e.printStackTrace();
-		}
-	}
-
-	// 다이어리 정보 수정
-	public static void updateUser(UserInfo user, String newDiaryComment, String reportingDate) {
-		try {
-			DiaryInfoDAO.updateDiaryInfo(newDiaryComment, reportingDate, user.getId());
-		} catch (SQLException e) {
-			FailView.showError("다이어리 수정 오류");
 			e.printStackTrace();
 		}
 	}

@@ -48,7 +48,7 @@ public class RunningEndUserView {
 
 	static public void printToUserMenu1(String userid) {	//1. 회원의 일기 작성
 		int dno=0,eno, wno, st, p;
-		String rdate, dc;
+		String dc;
 
 		System.out.println(userid+"님의 일기를 작성해주세요!!");
 		System.out.println("감정상태를 선택해주세요(1.화가나 2.짜증나 3.걱정돼 4.그럭저럭 5.평온해 6.최고!):");
@@ -57,8 +57,6 @@ public class RunningEndUserView {
 
 			System.out.println("날씨를 선택해주세요(1.따뜻해 2.더워 3.비가와 4.추워 5.구름둥둥 6.눈온다):");
 			wno = InputController.inputInt();
-			System.out.println("날짜를 입력해주세요(YYYY-MM-DD와같은 형식으로):");
-			rdate = InputController.inputString();
 			System.out.println("잠잔시간을 입력해주세요(숫자만 입력):");
 			st = InputController.inputInt();	
 			System.out.println("한줄코멘트를 입력해주세요:");
@@ -66,7 +64,7 @@ public class RunningEndUserView {
 			System.out.println("공개범위 설정/번호를 입력하세요(0.자기만보기  1.커플이랑 나만 보기  2.전체공개)");
 			p = InputController.inputInt();
 
-			HeartandHeartUserController.writeDiary(new DiaryInfo(dno,userid,eno,wno,rdate,st,dc,p));	
+			HeartandHeartUserController.writeDiary(new DiaryInfo(dno,userid,eno,wno,"",st,dc,p));	
 		} catch (NotIntegerException e) {
 			FailView.showError("정수만 입력가능합니다.");
 			e.printStackTrace();
@@ -74,14 +72,22 @@ public class RunningEndUserView {
 	}	
 
 	static public void printToUserMenu2(String userid) {	//2.회원의 일기 수정
-		String rdate,dc;
+		String dc;
+		int dno;
 		System.out.println(userid+"님의 일기를 수정합니다.");
-		System.out.println("수정할 날짜를 입력하세요.");
-		rdate = InputController.inputString();
-		System.out.println("한줄코멘트를 입력해주세요:");
-		dc = InputController.inputString();
-
-		HeartandHeartUserController.updateDiary(dc,rdate,userid);
+		System.out.println("다이어리 목록입니다.");
+		HeartandHeartUserController.selectDiary(userid);
+		
+		System.out.println("수정할 diary number를 입력하세요.");
+		try {
+			dno = InputController.inputInt();
+			System.out.println("한줄코멘트를 입력해주세요:");
+			dc = InputController.inputString();			
+			HeartandHeartUserController.updateDiary(dc,dno);
+		} catch (NotIntegerException e) {
+			System.out.println("정수만 입력가능합니다.");
+			e.printStackTrace();
+		}		
 	}
 
 	static public void printToUserMenu3(String userid) {	//3.일기 열람
@@ -104,6 +110,7 @@ public class RunningEndUserView {
 		System.out.println("이전화면으로 가려면 아무키나  입력하세요.");
 		InputController.inputString();	
 	}
+	
 	static public void printToUserMenu5(String userid) {	//5. 커플회원 정보 보기
 		System.out.println("커플회원 정보를 확인합니다.");
 		HeartandHeartUserController.howMatchingIdDoes(userid);
@@ -130,6 +137,7 @@ public class RunningEndUserView {
 	static public void printToNotUser() {
 		System.out.println("ID/PW를 다시 입력해주세요.");
 	}
+	
 	static public void printObject(Object o) {
 		System.out.println(o);
 	}

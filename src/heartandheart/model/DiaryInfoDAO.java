@@ -68,18 +68,17 @@ public class DiaryInfoDAO {
 		}
 		return userdatas;
 	}
-
+	
 	// 다이어리 수정
-	public static boolean updateDiaryInfo(String newDiaryComment, String reportingDate, String id) throws SQLException {
+	public static boolean updateDiaryInfo(String newDiaryComment, int diaryno) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.updateDiary"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("diary.update"));
 			pstmt.setString(1, newDiaryComment);
-			pstmt.setString(2, reportingDate);
-			pstmt.setString(3, id);
+			pstmt.setInt(2, diaryno);
 
 			if (pstmt.executeUpdate() == 1) {
 				return true;
@@ -91,28 +90,28 @@ public class DiaryInfoDAO {
 	}
 
 	// 다이어리 쓰기
-	public static boolean writeDiary(String id, int emotionNo, int weatherNo, String reportingDate, int sleepingTime,
+	public static boolean writeDiary(String id, int emotionNo, int weatherNo, int sleepingTime,
 			String diaryComment, int isPublic) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 
 		try {
+			System.out.println(id+"/"+emotionNo+"/"+weatherNo+"/"+sleepingTime+"/"+diaryComment+"/"+isPublic);
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("diary.insert"));
 			pstmt.setString(1, id);
 			pstmt.setInt(2, emotionNo);
 			pstmt.setInt(3, weatherNo);
-			pstmt.setString(4, reportingDate);
-			pstmt.setInt(5, sleepingTime);
-			pstmt.setString(6, diaryComment);
-			pstmt.setInt(7, isPublic);
+			pstmt.setInt(4, sleepingTime);
+			pstmt.setString(5, diaryComment);
+			pstmt.setInt(6, isPublic);
 
-			if (pstmt.executeUpdate() == 1) {
+			if (pstmt.executeUpdate()==1) {
 				return true;
 			}
 		} finally {
 			DBUtil.close(con, pstmt);
-		}
+		}		
 		return false;
 	}
 
@@ -123,7 +122,7 @@ public class DiaryInfoDAO {
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.deleteDiary"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("diary.deleteDiary"));
 			pstmt.setInt(1, diaryNo);
 			pstmt.setString(2, id);
 
@@ -144,7 +143,7 @@ public class DiaryInfoDAO {
 		ArrayList<DiaryInfo> datas = null;
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.howMatchingIdDoes"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("diary.howMatchingIdDoes"));
 			pstmt.setString(1, id);
 			datas = new ArrayList<DiaryInfo>();			
 			rset = pstmt.executeQuery();
@@ -172,7 +171,7 @@ public class DiaryInfoDAO {
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.otherPeopleFeels"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("diary.otherPeopleFeels"));
 			pstmt.setString(1, id);
 			datas = new ArrayList<String>();			
 			rset = pstmt.executeQuery();
