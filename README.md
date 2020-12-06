@@ -45,8 +45,8 @@
 :no_mouth: 이렇게 메말라 가는 현대인의 감정을 돌보기 위해<br> 
 셀프 멘탈 헬스케어 체크 SNS 플랫폼
 Dear.Diary가 탄생했습니다!!<p></p>
-<img align="left" width="300" src = "https://github.com/Heart-and-heart/Heart-and-Heart/blob/mergetest/by%EC%A1%B0%EC%9C%A4%EC%98%81.jpg?raw=true"> 
-<img width="300" src = "https://github.com/Heart-and-heart/Heart-and-Heart/blob/mergetest/%EC%BD%94%EB%81%BC%EB%A6%AC.jpg?raw=true">
+<img align="left" height="300" src = "https://github.com/Heart-and-heart/Heart-and-Heart/blob/mergetest/by%EC%A1%B0%EC%9C%A4%EC%98%81.jpg?raw=true"> 
+<img height="300" src = "https://github.com/Heart-and-heart/Heart-and-Heart/blob/mergetest/%EC%BD%94%EB%81%BC%EB%A6%AC.jpg?raw=true">
 
 >#### CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
 ><img align="left" height="170" img src="https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
