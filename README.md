@@ -1,6 +1,9 @@
 # Java-MiniProject : Dear.Diary
 
-이유 없는 감정은 없다! 
+<img height="250" src="https://ppss.kr/wp-content/uploads/2020/01/02-80-768x479.jpg">
+
+구체적인 기억보다 더 깊고 오래 남는 그 때의 '감정'으로 기억하는 나의 하루! <br>
+하루가 쌓여서 일주일, 한달, 일년이 되고나면 누구나 멘탈갑이 될 수 있습니다!  
 
 <b>Dear.Diary</b>는 <br>
 :thermometer:  날씨, 수면상태, 그 날의 기분, 하루 단상 등<br>
@@ -41,9 +44,9 @@
 #### Dear.Diary<br>
 :no_mouth: 이렇게 메말라 가는 현대인의 감정을 돌보기 위해<br> 
 셀프 멘탈 헬스케어 체크 SNS 플랫폼
-Dear.Diary가 탄생했습니다!!<p>
-DD와 함께 하면 삶이 어떻게 달라지는지 보실래요? <p><p></p>
+Dear.Diary가 탄생했습니다!!<p></p>
 
+<div>
 >#### CASE 1. REGULAR DIARY를 사용 중인 A씨 일기
 ><img align="left" height="170" img src="https://ohfun.net/contents/article/images/2019/0701/thm200_1561972645906397.jpg">
 >오늘은 아침부터 이유없이 기분이 울적했다.<br>
