@@ -308,10 +308,10 @@ https://ovenapp.io/view/QUf3DYCUbvbcQd5bSBf7GcjnouSksHxb/Bng3c
 
 2. UPDATE를 고려한 설계
 ```
-	1) LOGIN
-	2) 구조 짜기
- 	- MVC를 위해 CONTROLLER, VIEW, SERVICE, DAO, DTO 등 여러 개로 클래스를 나눠서 개발했다.
- 	  main에 한 번에 구현하면 훨 편했을텐데 controller를 거쳐 가도록 만드느라 복잡했다
-	- 하지만 수정과정에서 에러가 발생할 때마다 어느 지점으로 가서 손을 볼 지 파악할 수 있어 유용했다
-	3) SEQUENCE 기능의 활용
-	- 관리자가 개발자와 다를 경우를 위 감정, 날씨 등의 정보를 추가할 때 따로 일련번호를 확인할 필요가 없도록 각 테이블의 일련번호를 SEQUENCE로 매겨지게 했다.
+1) LOGIN
+2) 구조 짜기
+- MVC를 위해 CONTROLLER, VIEW, SERVICE, DAO, DTO 등 여러 개로 클래스를 나눠서 개발했다.
+  main에 한 번에 구현하면 훨 편했을텐데 controller를 거쳐 가도록 만드느라 복잡했다
+- 하지만 수정과정에서 에러가 발생할 때마다 어느 지점으로 가서 손을 볼 지 파악할 수 있어 유용했다
+3) SEQUENCE 기능의 활용
+- 관리자가 개발자와 다를 경우를 위 감정, 날씨 등의 정보를 추가할 때 따로 일련번호를 확인할 필요가 없도록 각 테이블의 일련번호를 SEQUENCE로 매겨지게 했다.
