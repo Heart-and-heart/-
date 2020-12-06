@@ -51,7 +51,7 @@ DD와 함께 하면 삶이 어떻게 달라지는지 보실래요? <p><p></p>
 >즉석떢볶이 집에서는 맵기 정도를 두고는 싸웠다.<p> 
 >연인과 싸우고 돌아오는 골목길,비가 쏟아진다.<p>
 >우산도 없는데 서럽다.<br>
->지금 내 얼굴 위 빗방울이 빗물인지 눈물인지 ㅁㅓ르겠ㄷㅏ...★</p>
+>지금 내 얼굴 위 빗방울이 빗물인지 눈물인지 모르겠ㄷㅏ...★ <p><p></p>
 
 >#### CASE 2. DEAR DIARY를 사용 중인 B씨 일기
 ><img align="left" height="200" img src = "https://instagram.ficn4-1.fna.fbcdn.net/v/t51.2885-15/e35/18888791_638450609677681_3614820475483455488_n.jpg?_nc_ht=instagram.ficn4-1.fna.fbcdn.net&_nc_cat=101&_nc_ohc=QDLB95sixEMAX_flfiT&tp=1&oh=05de921064cb026d07b2fea7c5ba94f6&oe=5FF700F1">
