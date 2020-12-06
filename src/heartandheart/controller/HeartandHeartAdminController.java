@@ -1,8 +1,10 @@
 package heartandheart.controller;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import heartandheart.exception.NotExistException;
+import heartandheart.exception.RedundantDataException;
 import heartandheart.model.DiaryInfoDAO;
 import heartandheart.model.EmotionInfoDAO;
 import heartandheart.model.UserInfoDAO;
@@ -31,11 +33,30 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 	}
 
 	// 감정 추가
-	public static void addEmotion(int emotionNo, String emotionStat) {
+	public static void addEmotion(String emotionStat) {
 		try {
-			EmotionInfoDAO.addEmotionInfo(emotionNo, emotionStat);
+			boolean flag=true;
+			for(EmotionInfo data : EmotionInfoDAO.getAllEmotionInfo()) {
+				if(data.getEmotionStat().equals(emotionStat)) {
+					flag=false;
+					break;
+				}
+			}
+			if(flag) {
+				if(EmotionInfoDAO.addEmotionInfo(emotionStat)==false) {
+					System.out.println("데이터 추가 실패");
+				}
+			} else {
+				throw new RedundantDataException("이미 존재하는 감정데이터를 입력하셨습니다.");
+			}
 		} catch (SQLException e) {
 			FailView.showError("감정 추가 오류");
+			e.printStackTrace();
+		} catch (NotExistException e) {
+			FailView.showError("감정데이터 추가 SQL오류");
+			e.printStackTrace();
+		} catch (RedundantDataException e) {
+			FailView.showError("이미 존재하는 감정데이터를 입력하셨습니다");
 			e.printStackTrace();
 		}
 	}
@@ -76,16 +97,35 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 	}
 
 	// 날씨 추가
-	public static void addWeather(int weatherNo, String weatherStat) {
+	public static void addWeather(String weatherStat) {
 		try {
-			WeatherInfoDAO.addWeatherInfo(weatherNo, weatherStat);
-		} catch (SQLException e) {
-			FailView.showError("날씨 추가 오류");
+			boolean flag=true;
+			for(WeatherInfo data : WeatherInfoDAO.getAllWeatherInfo()) {
+				if(data.getWeatherStats().equals(weatherStat)) {
+					flag=false;
+					break;
+				}
+			}
+			if(flag) {
+				if(WeatherInfoDAO.addWeatherInfo(weatherStat)==false) {
+					System.out.println("데이터 추가 실패");
+				}
+			} else {
+				throw new RedundantDataException("이미 존재하는 감정데이터를 입력하셨습니다.");
+			}
+		}catch (SQLException e) {
+			FailView.showError("날씨 검색 오류");
 			e.printStackTrace();
-		}
+		} catch (NotExistException e) {
+			FailView.showError("날씨 정보 없음");
+			e.printStackTrace();
+		} catch (RedundantDataException e) {
+			FailView.showError("이미 존재하는 날씨정보를 입력하셨습니다");
+			e.printStackTrace();
+		} 
 	}
 
-	// 감정 업데이트
+	// 날씨 업데이트
 	public static void updateweather(int weatherNo, String weatherStat) {
 		try {
 			WeatherInfoDAO.updateWeatherInfo(weatherNo, weatherStat);
@@ -95,7 +135,7 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 		}
 	}
 
-	// 감정 삭제
+	// 날씨 삭제
 	public static void deleteWeather(int weatherNo) {
 		try {
 			WeatherInfoDAO.deleteWeatherInfo(weatherNo);
@@ -182,9 +222,9 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 
 	// 유저 한명의 다이어리 검색
 	public static void selectDiarys(UserInfo user) {
-		
+
 		try {
-			for (DiaryInfo diary : DiaryInfoDAO.USRDiaryInfo(user.getId(), user.getPw())) {
+			for (DiaryInfo diary : DiaryInfoDAO.USRDiaryInfo(user.getId())) {
 				RunningEndAdminView.printObject(diary);
 			}
 		} catch (SQLException e) {
@@ -206,7 +246,6 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 		}
 	}
 
-	//diary.delete = delete from DIARY where id =?
 	// 다이어리 정보 삭제
 	public static void deleteUser(UserInfo user, int diaryNo) {
 		try {

@@ -15,17 +15,19 @@ public class DBUtil {
 	static {
 		try {
 			p.load( new FileInputStream("db.properties"));
-			Class.forName("jdbc.driver");
 			sqlAll.load(new FileInputStream("allsql.properties"));
+
+			Class.forName(p.getProperty("jdbc.driver"));
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("해당 driver가 없습니다.");
 		}
 	}
 
 	public static Connection getConnection() throws SQLException{
 		return DriverManager.getConnection(p.getProperty("jdbc.url"),
 				p.getProperty("jdbc.id"),
-				p.getProperty("jdbc.pw"));
+				p.getProperty("jdbc.pw"));		
 	}
 
 	public static Properties getSqlAll() {

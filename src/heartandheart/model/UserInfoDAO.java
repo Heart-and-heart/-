@@ -25,9 +25,9 @@ public class UserInfoDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("user.getAll"));
-			datas = new ArrayList<>();
-
+			datas = new ArrayList<UserInfo>();
 			rset = pstmt.executeQuery();
+			
 			while (rset.next()) {
 				datas.add(new UserInfo(rset.getString(1), rset.getInt(2), rset.getString(3)));
 			}
@@ -46,6 +46,7 @@ public class UserInfoDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		UserInfo user = null;
+		
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("user.getUSR"));

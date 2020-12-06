@@ -2,6 +2,9 @@ drop table DIARY;
 drop table USERINFO;
 drop table WEATHER;
 drop table EMOTIONS;
+drop sequence diary_seq;
+drop sequence weather_seq;
+drop sequence emotion_seq;
 
 create sequence emotion_seq;
 create table EMOTIONS(
@@ -31,26 +34,28 @@ create table DIARY(
    diarycomment varchar2(200) not null, 
    isPublic number(1) not null 
 ); 
-insert into EMOTIONS values(1, '화가나');
-insert into EMOTIONS values(2, '짜증나');
-insert into EMOTIONS values(3, '걱정돼');
-insert into EMOTIONS values(4, '그럭저럭'); 
-insert into EMOTIONS values(5, '평온해');
-insert into EMOTIONS values(6,' 최고');   
 
-insert into WEATHER values(1, '따뜻해');
-insert into WEATHER values(2, '더워');
-insert into WEATHER values(3, '비가와');
-insert into WEATHER values(4, '추워');
-insert into WEATHER values(5, '구름둥둥');
-insert into WEATHER values(6, '눈온다'); 
+insert into EMOTIONS values(emotion_seq.nextval, '화가나');
+insert into EMOTIONS values(emotion_seq.nextval, '짜증나');
+insert into EMOTIONS values(emotion_seq.nextval, '걱정돼');
+insert into EMOTIONS values(emotion_seq.nextval, '그럭저럭'); 
+insert into EMOTIONS values(emotion_seq.nextval, '평온해');
+insert into EMOTIONS values(emotion_seq.nextval,' 최고');     
 
-insert into USERINFO values('ace123', '123456', null);
-insert into USERINFO values('bestyou1', '1111111', null);
-insert into USERINFO values('coral2', '222222',  'ace123');
-insert into USERINFO values('doglover3', '333333', 'bestyou1');
-insert into USERINFO values('enough4', '444444', null);
-insert into USERINFO values('forever5', '555555', null); 
+insert into WEATHER values(weather_seq.nextval, '따뜻해');
+insert into WEATHER values(weather_seq.nextval, '더워');
+insert into WEATHER values(weather_seq.nextval, '비가와');
+insert into WEATHER values(weather_seq.nextval, '추워');
+insert into WEATHER values(weather_seq.nextval, '구름둥둥');
+insert into WEATHER values(weather_seq.nextval, '눈온다'); 
+
+insert into USERINFO values('ace123', 123456, null);
+insert into USERINFO values('bestyou1', 111111, null);
+insert into USERINFO values('coral2', 222222,  'ace123');
+insert into USERINFO values('doglover3', 333333, 'bestyou1');
+insert into USERINFO values('enough4', 44444, null);
+insert into USERINFO values('forever5', 555555, null); 
+insert into USERINFO values('admin', 1234, null); 
 
 insert into DIARY values(diary_seq.nextval, 'ace123', 6, 1, to_date('2020-12-01'), 6, '돈 주웠다 최고!', 2);
 insert into DIARY values(diary_seq.nextval, 'bestyou1', 5, 1, to_date('2020-12-01'), 7, '오늘 하루도 끝', 2);
@@ -219,3 +224,4 @@ insert into DIARY values(diary_seq.nextval
 , 'forever5', 6, 1, to_date('2020-12-14'), 6, '일년만에 오프라인 공연 보러 다녀옴! 매우 신남!!', 1);
 
 commit;
+

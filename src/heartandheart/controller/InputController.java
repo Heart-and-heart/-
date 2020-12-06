@@ -2,6 +2,7 @@ package heartandheart.controller;
 
 import java.util.Scanner;
 
+import heartandheart.exception.NotIntegerException;
 import heartandheart.model.UserInfoDAO;
 import heartandheart.model.dto.UserInfo;
 import heartandheart.view.RunningEndUserView;
@@ -9,37 +10,21 @@ import heartandheart.view.RunningEndUserView;
 public class InputController {
 	static Scanner scan = new Scanner(System.in);
 	
-	static public void inputbyClient(String input) {
-		String id="";
-		int pw=0;
-		
-		if(input.equals("start")){//로그인			
-			System.out.println("ID를 입력하세요:");
-			id = scan.next();
-			System.out.println("PW를 입력하세요.:");
-			pw = scan.nextInt();
-			if(LoginController.check(id,pw)==0) {	//관리자일때				
-			//	RunningEndView.
-			}else if(LoginController.check(id,pw)==1){	//사용자일때				
-				RunningEndUserView.printStartToUser(id);
-			}else {	
-				//회원이 아닐때				
+	static public int inputInt() throws NotIntegerException{		
+		String temp = scan.next();
+		for(int i=0;i<temp.length();i++) {
+			if(!(temp.charAt(i)>='0' && temp.charAt(i)<='9')) {
+				throw new NotIntegerException("정수를 입력하지 않았습니다!");
 			}
-		}else if(input.equals("menu1")) {
-			
 		}
-	}
-	static public void inputzero(String id) {
-		RunningEndUserView.printStartToUser(id);
-	}
-	static public int inputInt() {
-		return scan.nextInt();
+		return Integer.parseInt(temp);
 	}
 	static public String inputString() {
 		return scan.next();
 	}
 
 }
+
 
 
 

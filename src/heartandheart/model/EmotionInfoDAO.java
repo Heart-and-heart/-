@@ -25,7 +25,7 @@ public class EmotionInfoDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("emotion.getAll"));
-			datas = new ArrayList<>();
+			datas = new ArrayList<EmotionInfo>();
 			rset = pstmt.executeQuery();
 
 			while (rset.next()) {
@@ -41,7 +41,7 @@ public class EmotionInfoDAO {
 	}
 
 	// 감정정보 추가
-	public static boolean addEmotionInfo(int emotionNo, String emotionStat) throws SQLException {
+	public static boolean addEmotionInfo(String emotionStat) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 

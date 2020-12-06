@@ -26,11 +26,9 @@ public class DiaryInfoDAO {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("diary.getAll"));
 			rset = pstmt.executeQuery();
-			datas = new ArrayList<>();
-			
+			datas = new ArrayList<DiaryInfo>();
+
 			while (rset.next()) {
-				System.out.println(rset.getInt(1)+ rset.getString(2)+ rset.getInt(3)+ rset.getInt(4)+
-						rset.getString(5)+ rset.getInt(6)+ rset.getString(7)+ rset.getInt(8));
 				datas.add(new DiaryInfo(rset.getInt(1), rset.getString(2), rset.getInt(3), rset.getInt(4),
 						rset.getString(5), rset.getInt(6), rset.getString(7), rset.getInt(8)));
 			}
@@ -45,20 +43,19 @@ public class DiaryInfoDAO {
 
 	// 회원 crud
 	// 작성자 기준으로 다이어리 정보 가져오기
-	public static ArrayList<DiaryInfo> USRDiaryInfo(String id, int pw) throws SQLException, NotExistException {
+	public static ArrayList<DiaryInfo> USRDiaryInfo(String id) throws SQLException, NotExistException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 		ArrayList<DiaryInfo> userdatas = null;
-
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("diary.getUSR"));
-			pstmt.setString(1, id);
-			pstmt.setInt(2, pw);			
-			userdatas=new ArrayList<>();
-			rset = pstmt.executeQuery();
+			userdatas=new ArrayList<DiaryInfo>();
 			
+			pstmt = con.prepareStatement(sqlAll.getProperty("diary.getUSR"));
+			pstmt.setString(1, id);		
+			rset = pstmt.executeQuery();
+
 			while (rset.next()) {
 				userdatas.add(new DiaryInfo(rset.getInt(1), rset.getString(2), rset.getInt(3), rset.getInt(4),
 						rset.getString(5), rset.getInt(6), rset.getString(7), rset.getInt(8)));
@@ -66,7 +63,7 @@ public class DiaryInfoDAO {
 			if (userdatas.size()==0) {
 				throw new NotExistException("반환되는 다이어리 정보가 없습니다.");
 			}
-		} finally {
+		}finally {
 			DBUtil.close(con, pstmt, rset);
 		}
 		return userdatas;
@@ -83,7 +80,7 @@ public class DiaryInfoDAO {
 			pstmt.setString(1, newDiaryComment);
 			pstmt.setString(2, reportingDate);
 			pstmt.setString(3, id);
-			
+
 			if (pstmt.executeUpdate() == 1) {
 				return true;
 			}
@@ -109,7 +106,7 @@ public class DiaryInfoDAO {
 			pstmt.setInt(5, sleepingTime);
 			pstmt.setString(6, diaryComment);
 			pstmt.setInt(7, isPublic);
-			
+
 			if (pstmt.executeUpdate() == 1) {
 				return true;
 			}
@@ -129,7 +126,7 @@ public class DiaryInfoDAO {
 			pstmt = con.prepareStatement(sqlAll.getProperty("user.deleteDiary"));
 			pstmt.setInt(1, diaryNo);
 			pstmt.setString(2, id);
-			
+
 			if (pstmt.executeUpdate() == 1) {
 				return true;
 			}
@@ -149,18 +146,19 @@ public class DiaryInfoDAO {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("user.howMatchingIdDoes"));
 			pstmt.setString(1, id);
-			datas = new ArrayList<>();			
+			datas = new ArrayList<DiaryInfo>();			
 			rset = pstmt.executeQuery();
-			
+
 			while (rset.next()) {
 				datas.add(new DiaryInfo(rset.getInt(1), rset.getString(2), rset.getInt(3), rset.getInt(4),
 						rset.getString(5), rset.getInt(6), rset.getString(7), rset.getInt(8)));
 			}
+			
 			if (datas.size()==0) {
 				throw new NotExistException("반환되는 다이어리 정보가 없습니다.");
 			}
 		} finally {
-			DBUtil.close(con, pstmt);
+			DBUtil.close(con, pstmt, rset);
 		}
 		return datas;
 	}
@@ -176,9 +174,9 @@ public class DiaryInfoDAO {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("user.otherPeopleFeels"));
 			pstmt.setString(1, id);
-			datas = new ArrayList<>();			
+			datas = new ArrayList<String>();			
 			rset = pstmt.executeQuery();
-			
+
 			while (rset.next()) {
 				datas.add(rset.getString(2));
 			}
@@ -186,96 +184,96 @@ public class DiaryInfoDAO {
 				throw new NotExistException("반환되는 다이어리 정보가 없습니다.");
 			}
 		} finally {
-			DBUtil.close(con, pstmt);
+			DBUtil.close(con, pstmt, rset);
 		}
 		return datas;
 	}
 
 	// 지난주 감정정보 보기
-	public static int lastWeekEmotion(String id) throws SQLException, NotExistException {
+	public static double lastWeekEmotion(String id) throws SQLException, NotExistException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.EmoLastWeek"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("func.EmoLastWeek"));
 			pstmt.setString(1, id);
 			rset = pstmt.executeQuery();
-			
+
 			if (rset.next()) {
-				return rset.getInt(1);
+				return rset.getDouble(1);
 			} else {
 				throw new NotExistException("정보가 없습니다.");
 			}
 		} finally {
-			DBUtil.close(con, pstmt);
+			DBUtil.close(con, pstmt, rset);
 		}
 	}
 
 	// 이번주 감정정보 보기
-	public static int thisWeekEmotion(String id) throws SQLException, NotExistException {
+	public static double thisWeekEmotion(String id) throws SQLException, NotExistException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.EmoThisWeek"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("func.EmoThisWeek"));
 			pstmt.setString(1, id);
 			rset = pstmt.executeQuery();
-			
+
 			if (rset.next()) {
-				return rset.getInt(1);
+				return rset.getDouble(1);
 			} else {
 				throw new NotExistException("정보가 없습니다.");
 			}
 		} finally {
-			DBUtil.close(con, pstmt);
+			DBUtil.close(con, pstmt, rset);
 		}
 	}
 
 	// 지난주 수면시간 보기
-	public static int lastWeekSleep(String id) throws SQLException, NotExistException {
+	public static double lastWeekSleep(String id) throws SQLException, NotExistException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.SleepLastWeek"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("func.SleepThisWeek"));
 			pstmt.setString(1, id);
 			rset = pstmt.executeQuery();
-			
+
 			if (rset.next()) {
-				return rset.getInt(1);
+				return rset.getDouble(1);
 			} else {
 				throw new NotExistException("정보가 없습니다.");
 			}
 		} finally {
-			DBUtil.close(con, pstmt);
+			DBUtil.close(con, pstmt, rset);
 		}
 	}
 
 	// 이번주 수면시간 보기
-	public static int thisWeekSleep(String id) throws SQLException, NotExistException {
+	public static double thisWeekSleep(String id) throws SQLException, NotExistException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rset = null;
 
 		try {
 			con = DBUtil.getConnection();
-			pstmt = con.prepareStatement(sqlAll.getProperty("user.EmoThisWeek"));
+			pstmt = con.prepareStatement(sqlAll.getProperty("func.SleepAVGMine"));
 			pstmt.setString(1, id);
 			rset = pstmt.executeQuery();
-			
+
 			if (rset.next()) {
-				return rset.getInt(1);
+				return rset.getDouble(1);
 			} else {
 				throw new NotExistException("정보가 없습니다.");
 			}
 		} finally {
-			DBUtil.close(con, pstmt);
+			DBUtil.close(con, pstmt, rset);
 		}
 	}
 }

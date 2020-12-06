@@ -25,7 +25,7 @@ public class WeatherInfoDAO {
 		try {
 			con = DBUtil.getConnection();
 			pstmt = con.prepareStatement(sqlAll.getProperty("weather.getAll"));
-			datas = new ArrayList<>();			
+			datas = new ArrayList<WeatherInfo>();			
 			rset = pstmt.executeQuery();
 			
 			while (rset.next()) {
@@ -61,7 +61,7 @@ public class WeatherInfoDAO {
 	}
 	
 	// 날씨정보 추가
-	public static boolean addWeatherInfo(int weatherNo, String weatherStat) throws SQLException {
+	public static boolean addWeatherInfo(String weatherStat) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
