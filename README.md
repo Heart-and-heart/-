@@ -145,7 +145,7 @@ insert into USERINFO values('enough4', 444444, null);
 insert into USERINFO values('forever5', 555555, null); 
 insert into USERINFO values('admin', 1234, null); 
 
-COMMIT;          
+commit;          
 ```
 
 + EMOTIONS
@@ -167,7 +167,7 @@ insert into EMOTIONS values(emotions_seq.nextval, '그럭저럭');
 insert into EMOTIONS values(emotions_seq.nextval, '평온해');
 insert into EMOTIONS values(emotions_seq.nextval,' 최고');     
 
-COMMIT;           
+commit;             
 ```
 
 + WEATHER 
@@ -186,7 +186,7 @@ insert into WEATHER values(weather_seq.nextval, '추워');
 insert into WEATHER values(weather_seq.nextval, '구름둥둥');
 insert into WEATHER values(weather_seq.nextval, '눈온다'); 
 
-COMMIT;        
+commit;         
 ```
 + DIARY 
 
@@ -292,7 +292,7 @@ insert into DIARY values(diary_seq.nextval, 'doglover3', 5, 1, to_date('2020-12-
 insert into DIARY values(diary_seq.nextval, 'enough4', 6, 1, to_date('2020-12-14'), 6, '이사 첫 날, 새 집에는 햇살이 잘 들어서 좋다.', 1);
 insert into DIARY values(diary_seq.nextval, 'forever5', 6, 1, to_date('2020-12-14'), 6, '일년만에 오프라인 공연 보러 다녀옴! 매우 신남!!', 1);
 
-COMMIT;    
+commit;    
 ```
 
 
