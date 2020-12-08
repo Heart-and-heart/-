@@ -77,7 +77,10 @@ public class RunningEndAdminView {
 		} catch (NotIntegerException e) {
 			FailView.showError("정수만 입력가능합니다.");
 			e.printStackTrace();
-		} 
+		} catch (NotExistException e) {
+			FailView.showError("감정정보 수정 실패, 존재하는 감정정보만 입력가능함");
+			e.printStackTrace();
+		}
 	}
 	
 	static public void printToAdminMenu5() {	
@@ -101,7 +104,10 @@ public class RunningEndAdminView {
 		} catch (NotIntegerException e) {
 			FailView.showError("정수만 입력가능합니다.");
 			e.printStackTrace();
-		} 
+		} catch (NotExistException e) {
+			FailView.showError("날씨정보 수정 실패, 존재하는 날씨정보만 입력가능함");
+			e.printStackTrace();
+		}
 	}
 	
 	static public void printObject(Object o) {

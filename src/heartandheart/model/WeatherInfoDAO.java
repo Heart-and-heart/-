@@ -98,7 +98,7 @@ public class WeatherInfoDAO {
 		return false;
 	}
 	
-	// 날씨정보 수정
+	// 날시정보 수정
 	public static boolean updateWeatherInfo(int weatherNo, String weatherStat) throws SQLException {
 		Connection con = null;
 		PreparedStatement pstmt = null;
