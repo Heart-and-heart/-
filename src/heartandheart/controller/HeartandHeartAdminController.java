@@ -62,9 +62,11 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 	}
 
 	// 감정 업데이트
-	public static void updateEmotion(int emotionNo, String newemotionStat) {
+	public static void updateEmotion(int emotionNo, String newemotionStat) throws NotExistException{
 		try {
-			EmotionInfoDAO.updateEmotionInfo(emotionNo, newemotionStat);
+			if(EmotionInfoDAO.updateEmotionInfo(emotionNo, newemotionStat)==false) {
+				throw new NotExistException("업데이트 시킬 감정번호가 존재하지 않습니다.");
+			}
 		} catch (SQLException e) {
 			FailView.showError("감정 수정 오류");
 			e.printStackTrace();
@@ -126,9 +128,11 @@ public class HeartandHeartAdminController extends HeartandHeartUserController{
 	}
 
 	// 날씨 업데이트
-	public static void updateweather(int weatherNo, String weatherStat) {
+	public static void updateweather(int weatherNo, String weatherStat) throws NotExistException{
 		try {
-			WeatherInfoDAO.updateWeatherInfo(weatherNo, weatherStat);
+			if(WeatherInfoDAO.updateWeatherInfo(weatherNo, weatherStat)==false) {
+				throw new NotExistException("업데이트할 날씨 번호가 존재하지 않습니다.");
+			}
 		} catch (SQLException e) {
 			FailView.showError("날씨 수정 오류");
 			e.printStackTrace();
